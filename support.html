@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Support — AusUni Guide</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy: #0A2540; --navy-2: #14375A; --gold: #E5A442; --gold-soft: #F4B860;
+      --eucalyptus: #5A8F7B; --paper: #FBF8F3; --paper-2: #F5EFE3;
+      --white: #FFFFFF; --ink: #1A2332; --muted: #5C6B80; --line: #E5DDD0;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Inter', sans-serif; background: var(--paper); color: var(--ink); line-height: 1.65; font-size: 16px; -webkit-font-smoothing: antialiased; }
+    a { color: var(--navy); text-decoration: none; }
+    .container { max-width: 880px; margin: 0 auto; padding: 0 24px; }
+    .nav { background: rgba(251,248,243,0.92); backdrop-filter: blur(12px); border-bottom: 1px solid var(--line); position: sticky; top: 0; z-index: 100; }
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; padding: 16px 0; }
+    .logo { display: flex; align-items: center; gap: 10px; font-family: 'Fraunces', serif; font-weight: 700; font-size: 19px; color: var(--navy); }
+    .logo-mark { width: 32px; height: 32px; background: var(--navy); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: var(--gold); font-family: 'Fraunces', serif; font-weight: 700; font-size: 18px; }
+    .back-link { font-size: 14px; color: var(--muted); }
+    .back-link:hover { color: var(--navy); }
+    .eyebrow { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.15em; color: var(--muted); margin-bottom: 14px; }
+    .header { padding: 80px 0 56px; text-align: center; }
+    h1 { font-family: 'Fraunces', serif; font-size: clamp(38px, 5vw, 56px); font-weight: 600; letter-spacing: -0.025em; line-height: 1.1; color: var(--navy); margin-bottom: 18px; }
+    h1 em { font-style: italic; color: var(--gold); font-weight: 500; }
+    .header p { font-size: 18px; color: var(--muted); max-width: 580px; margin: 0 auto; }
+
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 64px; }
+    @media (max-width: 720px) { .contact-grid { grid-template-columns: 1fr; } }
+    .contact-card {
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 32px 28px;
+      transition: all 0.2s;
+    }
+    .contact-card:hover { border-color: var(--gold-soft); box-shadow: 0 8px 24px rgba(10,37,64,0.08); }
+    .contact-card.primary {
+      background: var(--navy);
+      color: var(--paper);
+      border-color: var(--navy);
+    }
+    .contact-icon {
+      width: 48px;
+      height: 48px;
+      background: var(--paper-2);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      margin-bottom: 18px;
+    }
+    .contact-card.primary .contact-icon { background: rgba(255,255,255,0.1); }
+    .contact-card h3 { font-family: 'Fraunces', serif; font-size: 21px; font-weight: 600; margin-bottom: 8px; letter-spacing: -0.01em; }
+    .contact-card.primary h3 { color: var(--gold); }
+    .contact-card p { font-size: 14px; color: var(--muted); margin-bottom: 16px; line-height: 1.6; }
+    .contact-card.primary p { color: rgba(255,255,255,0.85); }
+    .contact-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--navy);
+      padding-bottom: 2px;
+      border-bottom: 2px solid var(--gold);
+    }
+    .contact-card.primary .contact-cta { color: var(--paper); }
+
+    .quick-help { padding: 56px 0 96px; }
+    .section-title {
+      font-family: 'Fraunces', serif;
+      font-size: 28px;
+      font-weight: 600;
+      color: var(--navy);
+      letter-spacing: -0.01em;
+      margin-bottom: 8px;
+    }
+    .section-sub {
+      color: var(--muted);
+      margin-bottom: 32px;
+    }
+    .help-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    @media (max-width: 720px) { .help-grid { grid-template-columns: 1fr; } }
+    .help-item {
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 22px;
+    }
+    .help-item h4 { font-family: 'Fraunces', serif; font-size: 17px; font-weight: 600; color: var(--navy); margin-bottom: 6px; }
+    .help-item p { font-size: 14px; color: var(--muted); line-height: 1.6; }
+
+    .response-time {
+      background: var(--paper-2);
+      border-radius: 14px;
+      padding: 28px;
+      margin-bottom: 48px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+    @media (max-width: 600px) { .response-time { flex-direction: column; text-align: center; } }
+    .response-icon { font-size: 36px; flex-shrink: 0; }
+    .response-content h3 { font-family: 'Fraunces', serif; font-size: 19px; font-weight: 600; color: var(--navy); margin-bottom: 4px; }
+    .response-content p { color: var(--muted); font-size: 14px; }
+
+    footer { background: var(--ink); color: rgba(255,255,255,0.7); padding: 40px 0; text-align: center; font-size: 13px; }
+    footer a { color: rgba(255,255,255,0.85); text-decoration: underline; text-underline-offset: 3px; text-decoration-color: var(--gold); }
+  </style>
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="container nav-inner">
+      <a href="/" class="logo">
+        <span class="logo-mark">A</span>
+        <span>AusUni Guide</span>
+      </a>
+      <a href="/" class="back-link">← Back to home</a>
+    </div>
+  </nav>
+
+  <header class="header">
+    <div class="container">
+      <div class="eyebrow">Support</div>
+      <h1>We're here <em>to help.</em></h1>
+      <p>Real human support from the team behind AusUni Guide. No call centres, no scripts — just a direct line to someone who built the app.</p>
+    </div>
+  </header>
+
+  <section>
+    <div class="container">
+
+      <div class="response-time">
+        <div class="response-icon">📬</div>
+        <div class="response-content">
+          <h3>Typical response time: within 48 hours</h3>
+          <p>Most queries are answered within one business day. We respond to every email personally.</p>
+        </div>
+      </div>
+
+      <div class="contact-grid">
+        <a href="mailto:supportmarketiq@gmail.com?subject=AusUni%20Guide%20Support" class="contact-card primary">
+          <div class="contact-icon">✉️</div>
+          <h3>Email support</h3>
+          <p>The fastest way to reach us. Include your device model and a screenshot if you're reporting a bug.</p>
+          <span class="contact-cta">supportmarketiq@gmail.com →</span>
+        </a>
+
+        <a href="mailto:supportmarketiq@gmail.com?subject=AusUni%20Guide%20Premium%20Question" class="contact-card">
+          <div class="contact-icon">⭐</div>
+          <h3>Premium & billing</h3>
+          <p>Subscription issues, refund requests (via Google Play), or family plan setup.</p>
+          <span class="contact-cta">Premium support →</span>
+        </a>
+      </div>
+
+      <div class="quick-help">
+        <h2 class="section-title">Quick help</h2>
+        <p class="section-sub">Common questions we get — you might find your answer here first.</p>
+
+        <div class="help-grid">
+          <div class="help-item">
+            <h4>ARIA isn't responding</h4>
+            <p>Check your internet connection. Free users get the FAQ knowledge base; ARIA AI chat requires a Premium subscription.</p>
+          </div>
+
+          <div class="help-item">
+            <h4>Premium isn't unlocking</h4>
+            <p>Restore purchases from Settings, or wait a few minutes for Google Play to sync. Still stuck? Email us with your purchase ID.</p>
+          </div>
+
+          <div class="help-item">
+            <h4>How do I cancel Premium?</h4>
+            <p>Open Google Play → Profile → Payments & subscriptions → Subscriptions → AusUni Guide → Cancel. Done.</p>
+          </div>
+
+          <div class="help-item">
+            <h4>I want a refund</h4>
+            <p>Refunds are processed by Google Play directly. Request via play.google.com/store/account/orders within 48 hours of purchase.</p>
+          </div>
+
+          <div class="help-item">
+            <h4>The app crashed</h4>
+            <p>Force-close the app and reopen it. If it persists, email us your device model and what you were doing when it crashed.</p>
+          </div>
+
+          <div class="help-item">
+            <h4>Can I delete my account?</h4>
+            <p>Yes. Email us from your registered address and we'll remove your account and all associated data within 14 days.</p>
+          </div>
+
+          <div class="help-item">
+            <h4>I have a feature request</h4>
+            <p>We love these. Email us — every Premium subscriber's request gets read and considered for the roadmap.</p>
+          </div>
+
+          <div class="help-item">
+            <h4>Visa or migration question?</h4>
+            <p>We can't give individual visa advice. Please consult a MARA-registered Migration Agent or visit immi.homeaffairs.gov.au for official guidance.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>© 2026 AusUni Guide · <a href="/">Home</a> · <a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a></p>
+    </div>
+  </footer>
+
+</body>
+</html>
