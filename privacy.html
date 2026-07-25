@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Privacy Policy — AusUni Guide</title>
+  <meta name="description" content="Privacy Policy for UniPath Australia (com.mustansir.yaqub.ausuniguide)">
+  <title>Privacy Policy — UniPath Australia</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -13,75 +14,53 @@
       --white: #FFFFFF; --ink: #1A2332; --muted: #5C6B80; --line: #E5DDD0;
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      font-family: 'Inter', sans-serif;
-      background: var(--paper);
-      color: var(--ink);
-      line-height: 1.7;
-      font-size: 16px;
-      -webkit-font-smoothing: antialiased;
-    }
+    body { font-family: 'Inter', sans-serif; background: var(--paper); color: var(--ink); line-height: 1.7; font-size: 16px; -webkit-font-smoothing: antialiased; }
     a { color: var(--navy); text-decoration: underline; text-underline-offset: 3px; text-decoration-color: var(--gold); }
     a:hover { color: var(--gold); }
-    .container { max-width: 760px; margin: 0 auto; padding: 0 24px; }
-    .nav {
-      background: rgba(251,248,243,0.92);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--line);
-      position: sticky; top: 0; z-index: 100;
-    }
+    .container { max-width: 780px; margin: 0 auto; padding: 0 24px; }
+    .nav { background: rgba(251,248,243,0.92); backdrop-filter: blur(12px); border-bottom: 1px solid var(--line); position: sticky; top: 0; z-index: 100; }
     .nav-inner { display: flex; align-items: center; justify-content: space-between; padding: 16px 0; }
     .logo { display: flex; align-items: center; gap: 10px; font-family: 'Fraunces', serif; font-weight: 700; font-size: 19px; color: var(--navy); text-decoration: none; }
     .logo-mark { width: 32px; height: 32px; background: var(--navy); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: var(--gold); font-family: 'Fraunces', serif; font-weight: 700; font-size: 18px; }
     .back-link { font-size: 14px; color: var(--muted); text-decoration: none; }
-    .back-link:hover { color: var(--navy); }
-    .doc-header { padding: 80px 0 40px; }
+    .doc-header { padding: 64px 0 32px; }
     .eyebrow { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.15em; color: var(--muted); margin-bottom: 14px; }
-    h1 {
-      font-family: 'Fraunces', serif;
-      font-size: clamp(36px, 5vw, 52px);
-      font-weight: 600;
-      letter-spacing: -0.02em;
-      line-height: 1.1;
-      color: var(--navy);
-      margin-bottom: 16px;
-    }
+    h1 { font-family: 'Fraunces', serif; font-size: clamp(34px, 5vw, 48px); font-weight: 600; letter-spacing: -0.02em; line-height: 1.1; color: var(--navy); margin-bottom: 14px; }
     h1 em { font-style: italic; color: var(--gold); font-weight: 500; }
-    .doc-meta { color: var(--muted); font-size: 14px; padding-bottom: 32px; border-bottom: 1px solid var(--line); }
-    .doc-content { padding: 48px 0 96px; }
-    h2 {
-      font-family: 'Fraunces', serif;
-      font-size: 26px;
-      font-weight: 600;
-      color: var(--navy);
-      letter-spacing: -0.01em;
-      margin: 48px 0 16px;
-    }
-    h3 {
-      font-family: 'Fraunces', serif;
-      font-size: 19px;
-      font-weight: 600;
-      color: var(--navy);
-      margin: 32px 0 12px;
-    }
+    .doc-meta { color: var(--muted); font-size: 14px; }
+    .doc-content { padding: 8px 0 96px; }
+    h2 { font-family: 'Fraunces', serif; font-size: 25px; font-weight: 600; color: var(--navy); letter-spacing: -0.01em; margin: 44px 0 14px; }
+    h3 { font-family: 'Fraunces', serif; font-size: 18px; font-weight: 600; color: var(--navy); margin: 28px 0 10px; }
     p, ul { margin-bottom: 16px; color: #2D3748; }
     ul { padding-left: 24px; }
     ul li { margin-bottom: 8px; }
-    .callout {
-      background: var(--paper-2);
-      border-left: 4px solid var(--gold);
-      padding: 20px 24px;
-      border-radius: 6px;
-      margin: 24px 0;
-    }
+    .callout { background: var(--paper-2); border-left: 4px solid var(--gold); padding: 20px 24px; border-radius: 6px; margin: 24px 0; }
     .callout p:last-child { margin-bottom: 0; }
-    footer {
-      background: var(--ink);
-      color: rgba(255,255,255,0.7);
-      padding: 40px 0;
-      text-align: center;
-      font-size: 13px;
+
+    /* Identification table — this is what Google checks */
+    .id-card {
+      background: var(--white);
+      border: 2px solid var(--navy);
+      border-radius: 12px;
+      padding: 4px 0;
+      margin: 28px 0 36px;
+      overflow: hidden;
     }
+    .id-card h2 {
+      margin: 20px 24px 12px;
+      font-size: 20px;
+    }
+    table { width: 100%; border-collapse: collapse; }
+    td { padding: 12px 24px; border-top: 1px solid var(--line); vertical-align: top; font-size: 15px; }
+    td.k { font-weight: 600; color: var(--navy); width: 42%; }
+    td.v { color: #2D3748; }
+    @media (max-width: 560px) {
+      td { display: block; padding: 6px 20px; }
+      td.k { border-top: 1px solid var(--line); padding-top: 14px; width: 100%; }
+      td.v { padding-bottom: 14px; }
+    }
+
+    footer { background: var(--ink); color: rgba(255,255,255,0.7); padding: 40px 0; text-align: center; font-size: 13px; }
     footer a { color: rgba(255,255,255,0.85); }
   </style>
 </head>
@@ -90,8 +69,8 @@
   <nav class="nav">
     <div class="container nav-inner">
       <a href="/" class="logo">
-        <span class="logo-mark">A</span>
-        <span>AusUni Guide</span>
+        <span class="logo-mark">U</span>
+        <span>UniPath Australia</span>
       </a>
       <a href="/" class="back-link">← Back to home</a>
     </div>
@@ -100,100 +79,200 @@
   <header class="doc-header">
     <div class="container">
       <div class="eyebrow">Legal</div>
-      <h1>Privacy <em>Policy</em></h1>
-      <p class="doc-meta">Last updated: 27 May 2026 · Effective immediately</p>
+      <h1>Privacy Policy for <em>UniPath Australia</em></h1>
+      <p class="doc-meta">Last updated: 20 July 2026 · Effective immediately</p>
     </div>
   </header>
 
   <main class="doc-content">
     <div class="container">
 
-      <div class="callout">
-        <p><strong>Summary:</strong> We collect the minimum information needed to make the app work. We don't sell your data. ARIA AI conversations are processed through Anthropic's Claude API but never stored on our servers. You can delete your account at any time.</p>
+      <!-- ================================================================
+           IDENTIFICATION BLOCK
+           Google Play requires the app name, package name and developer
+           name here to match the store listing exactly.
+           ================================================================ -->
+      <div class="id-card">
+        <h2>App and developer details</h2>
+        <table>
+          <tr>
+            <td class="k">Application name</td>
+            <td class="v">UniPath Australia</td>
+          </tr>
+          <tr>
+            <td class="k">Google Play package name</td>
+            <td class="v">com.mustansir.yaqub.ausuniguide</td>
+          </tr>
+          <tr>
+            <td class="k">Developer name</td>
+            <td class="v">MustiIQ</td>
+          </tr>
+          <tr>
+            <td class="k">Data controller</td>
+            <td class="v">MustiIQ</td>
+          </tr>
+          <tr>
+            <td class="k">Contact email</td>
+            <td class="v"><a href="mailto:supportmarketiq@gmail.com">supportmarketiq@gmail.com</a></td>
+          </tr>
+          <tr>
+            <td class="k">Location</td>
+            <td class="v">Melbourne, Victoria, Australia</td>
+          </tr>
+          <tr>
+            <td class="k">Google Play listing</td>
+            <td class="v">
+              <a href="https://play.google.com/store/apps/details?id=com.mustansir.yaqub.ausuniguide" target="_blank" rel="noopener">
+                play.google.com/store/apps/details?id=com.mustansir.yaqub.ausuniguide
+              </a>
+            </td>
+          </tr>
+        </table>
       </div>
 
-      <h2>1. Who we are</h2>
-      <p>AusUni Guide ("we", "our", "us") is an independent mobile application owned and operated by Mustansir Yaqub, based in Melbourne, Australia. We are not affiliated with the Australian Government, the Department of Home Affairs, or any specific Australian university.</p>
+      <p>
+        This Privacy Policy explains how <strong>MustiIQ</strong> ("we", "our", "us")
+        collects, uses and protects your information when you use the mobile application
+        <strong>UniPath Australia</strong> (package name <strong>com.mustansir.yaqub.ausuniguide</strong>),
+        distributed through the Google Play Store.
+      </p>
+
+      <div class="callout">
+        <p><strong>In short:</strong> We collect the minimum information needed to make the app work. We do not sell your data. ARIA AI conversations are processed through Anthropic's Claude API but are not stored on our servers. You can delete your account at any time.</p>
+      </div>
+
+      <h2>1. About the app</h2>
+      <p>
+        UniPath Australia is an independent informational application that helps international students
+        research Australian universities, courses, scholarships and the student visa process. It is
+        developed and operated by MustiIQ in Melbourne, Australia.
+      </p>
+      <p>
+        UniPath Australia is not affiliated with the Australian Government, the Department of Home Affairs,
+        or any Australian university.
+      </p>
 
       <h2>2. Information we collect</h2>
 
       <h3>Information you provide</h3>
       <ul>
-        <li>Account information: name and email address when you create a free account</li>
-        <li>Profile preferences: study area, GPA, English test scores (only if you choose to use the eligibility checker)</li>
+        <li>Account details: your name, email address and password, if you choose to create a free account</li>
+        <li>Optional profile details: study area, GPA, English test scores — only if you use the course eligibility checker</li>
         <li>Checklist progress and saved universities</li>
       </ul>
+      <p>
+        You may also use UniPath Australia as a guest without creating an account. In guest mode we do not
+        collect a name, email address or password.
+      </p>
 
       <h3>Information collected automatically</h3>
       <ul>
-        <li>Device identifier (anonymous UUID) to enforce free-tier daily limits</li>
-        <li>App usage analytics (anonymised, via standard Android frameworks)</li>
-        <li>Crash reports to help us fix bugs</li>
+        <li>An anonymous device identifier, generated on first launch, used to apply daily usage limits to the ARIA assistant</li>
+        <li>Standard Android crash reports and basic usage diagnostics</li>
       </ul>
 
       <h3>Subscription information</h3>
-      <p>Premium subscriptions are processed by RevenueCat and Google Play. We never see or store your payment card details — only your subscription status (active or inactive).</p>
+      <p>
+        Premium subscriptions are processed by Google Play and managed through RevenueCat. We never
+        receive or store your payment card details. We receive only your subscription status
+        (active or inactive) and an anonymised subscriber identifier.
+      </p>
 
-      <h2>3. How we use your information</h2>
+      <h2>3. Where your data is stored</h2>
+      <p>
+        Account details, passwords and checklist progress are stored locally on your device using
+        Android's app storage. They are not uploaded to our servers and are removed when you uninstall
+        the app or clear its data.
+      </p>
+
+      <h2>4. How we use your information</h2>
       <ul>
-        <li>To provide the core features of the app (course search, comparison, checklist)</li>
-        <li>To deliver ARIA AI conversations to Premium users</li>
-        <li>To enforce daily message limits for free users</li>
-        <li>To send important account or service updates (rare)</li>
-        <li>To diagnose bugs and improve the app</li>
+        <li>To provide the app's core features — course search, university comparison, checklists</li>
+        <li>To deliver ARIA AI responses to premium subscribers</li>
+        <li>To apply fair-use limits on the ARIA assistant</li>
+        <li>To diagnose crashes and improve the app</li>
+        <li>To respond when you contact support</li>
       </ul>
 
-      <h2>4. ARIA AI and your conversations</h2>
-      <p>When you send a message to ARIA, the message and recent conversation history are sent to Anthropic's Claude API via our Supabase backend. These conversations are:</p>
+      <h2>5. ARIA AI and your conversations</h2>
+      <p>
+        When a premium subscriber sends a message to ARIA, that message and recent conversation context
+        are transmitted to Anthropic's Claude API through a Supabase Edge Function. These conversations:
+      </p>
       <ul>
-        <li>Not stored on our servers after the response is generated</li>
-        <li>Used only to generate ARIA's response to you</li>
-        <li>Subject to <a href="https://www.anthropic.com/legal/privacy" target="_blank" rel="noopener">Anthropic's privacy policy</a> during processing</li>
+        <li>Are not retained on our servers after the response is returned</li>
+        <li>Are used solely to generate a reply to you</li>
+        <li>Are subject to <a href="https://www.anthropic.com/legal/privacy" target="_blank" rel="noopener">Anthropic's privacy policy</a> during processing</li>
       </ul>
-      <p>Do not share sensitive personal information (passport numbers, financial details, etc.) in your ARIA conversations.</p>
+      <p>
+        Please do not share sensitive personal information such as passport numbers or financial details
+        in ARIA conversations.
+      </p>
 
-      <h2>5. Data sharing</h2>
-      <p>We do not sell, rent, or trade your personal information. We share data only with the service providers necessary to operate the app:</p>
+      <h2>6. Sharing your information</h2>
+      <p>We do not sell, rent or trade personal information. We share data only with the service providers required to operate the app:</p>
       <ul>
-        <li><strong>Supabase</strong> — backend database and edge functions hosting</li>
-        <li><strong>Anthropic</strong> — Claude AI processing for ARIA conversations (Premium only)</li>
-        <li><strong>RevenueCat</strong> — subscription management</li>
-        <li><strong>Google Play</strong> — payment processing and app distribution</li>
+        <li><strong>Supabase Inc.</strong> — backend hosting and edge functions</li>
+        <li><strong>Anthropic PBC</strong> — Claude AI processing for ARIA (premium subscribers only)</li>
+        <li><strong>RevenueCat Inc.</strong> — subscription management</li>
+        <li><strong>Google LLC</strong> — app distribution and payment processing via Google Play</li>
       </ul>
+      <p>
+        We may also disclose information where required by law, or to protect our legal rights.
+      </p>
 
-      <h2>6. Data security</h2>
-      <p>We use industry-standard security measures including encrypted connections (HTTPS), Supabase Row Level Security policies, and secrets management for API keys. However, no system is 100% secure — please use a strong, unique password and never share your account credentials.</p>
+      <h2>7. Data security</h2>
+      <p>
+        We use encrypted connections (HTTPS) for all network requests, Supabase Row Level Security
+        policies, and server-side secrets management for API keys. No system is completely secure, so
+        please use a strong password and do not share your account credentials.
+      </p>
 
-      <h2>7. Your rights</h2>
-      <p>You have the right to:</p>
+      <h2>8. Your rights</h2>
+      <p>You may:</p>
       <ul>
-        <li>Access the personal data we hold about you</li>
-        <li>Correct inaccurate information</li>
-        <li>Delete your account and all associated data</li>
-        <li>Export your data in a portable format</li>
-        <li>Opt out of non-essential communications</li>
+        <li>Request access to the personal data we hold about you</li>
+        <li>Ask us to correct inaccurate information</li>
+        <li>Delete your account and its data — clearing the app's data or uninstalling removes everything stored locally</li>
+        <li>Request a copy of your data in a portable format</li>
+        <li>Withdraw consent by discontinuing use of the app</li>
       </ul>
-      <p>To exercise any of these rights, email us at <a href="mailto:supportmarketiq@gmail.com">supportmarketiq@gmail.com</a>. We respond within 14 days.</p>
+      <p>
+        To exercise any of these rights, email
+        <a href="mailto:supportmarketiq@gmail.com">supportmarketiq@gmail.com</a>. We respond within 14 days.
+      </p>
 
-      <h2>8. Children's privacy</h2>
-      <p>AusUni Guide is intended for users aged 16 and over. We do not knowingly collect information from children under 16. If you believe a child has provided us with personal information, please contact us and we will delete it promptly.</p>
-
-      <h2>9. Cookies and tracking</h2>
-      <p>The mobile app does not use traditional cookies. We use standard Android device identifiers and locally stored preferences (AsyncStorage) to remember your settings between sessions. This data stays on your device.</p>
+      <h2>9. Children's privacy</h2>
+      <p>
+        UniPath Australia is intended for users aged 16 and over. We do not knowingly collect personal
+        information from children under 16. If you believe a child has provided us with personal
+        information, contact us and we will delete it.
+      </p>
 
       <h2>10. International users</h2>
-      <p>AusUni Guide is used by international students worldwide. Your data may be processed in countries where our service providers operate (Australia, United States). By using the app you consent to this transfer. We comply with the Australian Privacy Principles under the Privacy Act 1988.</p>
+      <p>
+        UniPath Australia is used by students worldwide. Your data may be processed in countries where our
+        service providers operate, including Australia and the United States. We handle personal
+        information in accordance with the Australian Privacy Principles under the Privacy Act 1988 (Cth).
+      </p>
 
       <h2>11. Changes to this policy</h2>
-      <p>We may update this Privacy Policy from time to time. Material changes will be notified through the app or via email. Continued use of the app after changes constitutes acceptance of the updated policy.</p>
+      <p>
+        We may update this Privacy Policy from time to time. Material changes will be announced in the
+        app or by email. The "last updated" date at the top of this page always reflects the current
+        version.
+      </p>
 
-      <h2>12. Contact us</h2>
-      <p>Questions, concerns, or requests about your privacy:</p>
-      <p><strong>Email:</strong> <a href="mailto:supportmarketiq@gmail.com">supportmarketiq@gmail.com</a><br>
-      <strong>Location:</strong> Melbourne, Victoria, Australia</p>
+      <h2>12. Contact</h2>
+      <p>
+        <strong>Developer:</strong> MustiIQ<br>
+        <strong>App:</strong> UniPath Australia (com.mustansir.yaqub.ausuniguide)<br>
+        <strong>Email:</strong> <a href="mailto:supportmarketiq@gmail.com">supportmarketiq@gmail.com</a><br>
+        <strong>Location:</strong> Melbourne, Victoria, Australia
+      </p>
 
-      <div class="callout" style="margin-top: 48px;">
-        <p>By using AusUni Guide, you acknowledge that you have read and understood this Privacy Policy.</p>
+      <div class="callout" style="margin-top: 44px;">
+        <p>By using UniPath Australia you acknowledge that you have read and understood this Privacy Policy.</p>
       </div>
 
     </div>
@@ -201,7 +280,7 @@
 
   <footer>
     <div class="container">
-      <p>© 2026 AusUni Guide · <a href="/">Home</a> · <a href="terms.html">Terms</a> · <a href="support.html">Support</a></p>
+      <p>© 2026 UniPath Australia · Developed by MustiIQ · <a href="/">Home</a> · <a href="terms.html">Terms</a> · <a href="support.html">Support</a></p>
     </div>
   </footer>
 
