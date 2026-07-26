@@ -3,170 +3,127 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Terms of Service — AusUni Guide</title>
+  <meta name="description" content="Terms of Service for UniPath Australia">
+  <title>Terms of Service — UniPath Australia</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
-    :root {
-      --navy: #0A2540; --gold: #E5A442; --paper: #FBF8F3; --paper-2: #F5EFE3;
-      --white: #FFFFFF; --ink: #1A2332; --muted: #5C6B80; --line: #E5DDD0;
-    }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: 'Inter', sans-serif; background: var(--paper); color: var(--ink); line-height: 1.7; font-size: 16px; -webkit-font-smoothing: antialiased; }
-    a { color: var(--navy); text-decoration: underline; text-underline-offset: 3px; text-decoration-color: var(--gold); }
-    a:hover { color: var(--gold); }
-    .container { max-width: 760px; margin: 0 auto; padding: 0 24px; }
-    .nav { background: rgba(251,248,243,0.92); backdrop-filter: blur(12px); border-bottom: 1px solid var(--line); position: sticky; top: 0; z-index: 100; }
-    .nav-inner { display: flex; align-items: center; justify-content: space-between; padding: 16px 0; }
-    .logo { display: flex; align-items: center; gap: 10px; font-family: 'Fraunces', serif; font-weight: 700; font-size: 19px; color: var(--navy); text-decoration: none; }
-    .logo-mark { width: 32px; height: 32px; background: var(--navy); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: var(--gold); font-family: 'Fraunces', serif; font-weight: 700; font-size: 18px; }
-    .back-link { font-size: 14px; color: var(--muted); text-decoration: none; }
-    .back-link:hover { color: var(--navy); }
-    .doc-header { padding: 80px 0 40px; }
-    .eyebrow { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.15em; color: var(--muted); margin-bottom: 14px; }
-    h1 { font-family: 'Fraunces', serif; font-size: clamp(36px, 5vw, 52px); font-weight: 600; letter-spacing: -0.02em; line-height: 1.1; color: var(--navy); margin-bottom: 16px; }
-    h1 em { font-style: italic; color: var(--gold); font-weight: 500; }
-    .doc-meta { color: var(--muted); font-size: 14px; padding-bottom: 32px; border-bottom: 1px solid var(--line); }
-    .doc-content { padding: 48px 0 96px; }
-    h2 { font-family: 'Fraunces', serif; font-size: 26px; font-weight: 600; color: var(--navy); letter-spacing: -0.01em; margin: 48px 0 16px; }
-    p, ul { margin-bottom: 16px; color: #2D3748; }
-    ul { padding-left: 24px; }
-    ul li { margin-bottom: 8px; }
-    .callout { background: var(--paper-2); border-left: 4px solid var(--gold); padding: 20px 24px; border-radius: 6px; margin: 24px 0; }
-    .callout p:last-child { margin-bottom: 0; }
-    footer { background: var(--ink); color: rgba(255,255,255,0.7); padding: 40px 0; text-align: center; font-size: 13px; }
-    footer a { color: rgba(255,255,255,0.85); }
+    :root { --navy:#0A2540; --gold:#E5A442; --paper:#FBF8F3; --paper-2:#F5EFE3; --white:#fff; --ink:#1A2332; --muted:#5C6B80; --line:#E5DDD0; }
+    *{box-sizing:border-box;margin:0;padding:0;}
+    body{font-family:'Inter',sans-serif;background:var(--paper);color:var(--ink);line-height:1.7;font-size:16px;-webkit-font-smoothing:antialiased;}
+    a{color:var(--navy);text-decoration:underline;text-underline-offset:3px;text-decoration-color:var(--gold);}
+    a:hover{color:var(--gold);}
+    .container{max-width:780px;margin:0 auto;padding:0 24px;}
+    .nav{background:rgba(251,248,243,0.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:100;}
+    .nav-inner{display:flex;align-items:center;justify-content:space-between;padding:16px 0;}
+    .logo{display:flex;align-items:center;gap:10px;font-family:'Fraunces',serif;font-weight:700;font-size:19px;color:var(--navy);text-decoration:none;}
+    .logo-mark{width:34px;height:34px;background:var(--navy);border-radius:9px;display:flex;align-items:center;justify-content:center;}
+    .logo-mark svg{width:22px;height:22px;}
+    .back-link{font-size:14px;color:var(--muted);text-decoration:none;}
+    .back-link:hover{color:var(--navy);}
+    .doc-header{padding:64px 0 32px;}
+    .eyebrow{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.15em;color:var(--muted);margin-bottom:14px;}
+    h1{font-family:'Fraunces',serif;font-size:clamp(34px,5vw,48px);font-weight:600;letter-spacing:-0.02em;line-height:1.1;color:var(--navy);margin-bottom:14px;}
+    h1 em{font-style:italic;color:var(--gold);font-weight:500;}
+    .doc-meta{color:var(--muted);font-size:14px;}
+    .doc-content{padding:8px 0 96px;}
+    h2{font-family:'Fraunces',serif;font-size:25px;font-weight:600;color:var(--navy);letter-spacing:-0.01em;margin:44px 0 14px;}
+    h3{font-family:'Fraunces',serif;font-size:18px;font-weight:600;color:var(--navy);margin:28px 0 10px;}
+    p,ul{margin-bottom:16px;color:#2D3748;}
+    ul{padding-left:24px;} ul li{margin-bottom:8px;}
+    .callout{background:var(--paper-2);border-left:4px solid var(--gold);padding:20px 24px;border-radius:6px;margin:24px 0;}
+    .callout p:last-child{margin-bottom:0;}
+    .id-card{background:var(--white);border:2px solid var(--navy);border-radius:12px;padding:4px 0;margin:28px 0 36px;overflow:hidden;}
+    .id-card h2{margin:20px 24px 12px;font-size:20px;}
+    table{width:100%;border-collapse:collapse;}
+    td{padding:12px 24px;border-top:1px solid var(--line);vertical-align:top;font-size:15px;}
+    td.k{font-weight:600;color:var(--navy);width:42%;}
+    td.v{color:#2D3748;}
+    @media(max-width:560px){td{display:block;padding:6px 20px;}td.k{border-top:1px solid var(--line);padding-top:14px;width:100%;}td.v{padding-bottom:14px;}}
+    footer{background:var(--ink);color:rgba(255,255,255,0.7);padding:40px 0;text-align:center;font-size:13px;}
+    footer a{color:rgba(255,255,255,0.85);}
   </style>
 </head>
 <body>
-
   <nav class="nav">
     <div class="container nav-inner">
-      <a href="/" class="logo">
-        <span class="logo-mark">A</span>
-        <span>AusUni Guide</span>
+      <a href="index.html" class="logo">
+        <span class="logo-mark"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 3L1 8l11 5 9-4.09V15h2V8L12 3zM5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z" fill="#E5A442"/></svg></span>
+        <span>UniPath Australia</span>
       </a>
-      <a href="/" class="back-link">← Back to home</a>
+      <a href="index.html" class="back-link">← Back to home</a>
     </div>
   </nav>
+  <header class="doc-header"><div class="container">
+    <div class="eyebrow">Legal</div>
+    <h1>Terms of <em>Service</em></h1>
+    <p class="doc-meta">Last updated: 26 July 2026 · Effective immediately</p>
+  </div></header>
+  <main class="doc-content"><div class="container">
 
-  <header class="doc-header">
-    <div class="container">
-      <div class="eyebrow">Legal</div>
-      <h1>Terms of <em>Service</em></h1>
-      <p class="doc-meta">Last updated: 27 May 2026 · Effective immediately</p>
-    </div>
-  </header>
+    <div class="callout"><p><strong>The short version:</strong> UniPath Australia is an informational tool, not professional advice. Visa and immigration matters should always be confirmed with a MARA-registered Migration Agent. Premium subscriptions are billed by Google Play. You can cancel any time.</p></div>
 
-  <main class="doc-content">
-    <div class="container">
+    <h2>1. Agreement</h2>
+    <p>By downloading, installing or using UniPath Australia ("the app"), you agree to these Terms of Service. If you do not agree, please do not use the app. The app is developed and operated by MustiIQ, Melbourne, Australia.</p>
 
-      <div class="callout">
-        <p><strong>The short version:</strong> AusUni Guide is an informational tool, not professional advice. Visa and immigration matters should always be confirmed with a MARA-registered Migration Agent. Premium subscriptions are billed by Google Play. You can cancel any time.</p>
-      </div>
+    <h2>2. Eligibility</h2>
+    <p>You must be at least 16 years of age to use UniPath Australia. By using the app you confirm you meet this requirement.</p>
 
-      <h2>1. Agreement</h2>
-      <p>By downloading, installing, or using AusUni Guide ("the app"), you agree to these Terms of Service. If you do not agree, please do not use the app.</p>
+    <h2>3. What UniPath Australia is — and isn't</h2>
+    <p><strong>UniPath Australia is:</strong></p>
+    <ul><li>An independent information tool to help international students explore Australian universities</li><li>A research aid covering courses, scholarships, visa processes and life in Australia</li><li>An AI assistant (ARIA) trained to provide general guidance on the student journey</li></ul>
+    <p><strong>UniPath Australia is NOT:</strong></p>
+    <ul><li>An official Australian Government, Department of Home Affairs, or university service</li><li>A registered migration agent or immigration consultant</li><li>A substitute for professional legal, financial or migration advice</li><li>A guarantee of admission to any university or visa approval</li></ul>
 
-      <h2>2. Eligibility</h2>
-      <p>You must be at least 16 years of age to use AusUni Guide. By using the app you confirm you meet this requirement.</p>
+    <h2>4. Visa and immigration matters</h2>
+    <p>Information provided about the Australian Student Visa (Subclass 500) is general guidance only. Visa policies, fees and processing times can change at any time without notice. <strong>Before applying for any visa, you must consult a MARA-registered Migration Agent or verify all information directly with the Department of Home Affairs at immi.homeaffairs.gov.au.</strong> UniPath Australia accepts no liability for visa application outcomes.</p>
 
-      <h2>3. What AusUni Guide is — and isn't</h2>
-      <p><strong>AusUni Guide is:</strong></p>
-      <ul>
-        <li>An independent information tool to help international students explore Australian universities</li>
-        <li>A research aid covering courses, scholarships, visa processes, and life in Australia</li>
-        <li>An AI assistant (ARIA) trained to provide general guidance on the student journey</li>
-      </ul>
-      <p><strong>AusUni Guide is NOT:</strong></p>
-      <ul>
-        <li>An official Australian Government, Department of Home Affairs, or university service</li>
-        <li>A registered migration agent or immigration consultant</li>
-        <li>A substitute for professional legal, financial, or migration advice</li>
-        <li>A guarantee of admission to any university or visa approval</li>
-      </ul>
+    <h2>5. Course and university information</h2>
+    <p>Tuition fees, course details, entry requirements and rankings shown in the app are sourced from publicly available information and may change. Always verify the latest details directly with the university before applying or making financial decisions.</p>
 
-      <h2>4. Visa and immigration matters</h2>
-      <p>Information provided about the Australian Student Visa (Subclass 500) is general guidance only. Visa policies, fees, and processing times can change at any time without notice. <strong>Before applying for any visa, you must consult a MARA-registered Migration Agent or verify all information directly with the Department of Home Affairs at immi.homeaffairs.gov.au.</strong> AusUni Guide accepts no liability for visa application outcomes.</p>
+    <h2>6. ARIA AI assistant</h2>
+    <p>ARIA provides AI-generated responses based on a language model developed by Anthropic. AI responses:</p>
+    <ul><li>May contain errors, outdated information or inaccuracies</li><li>Should be verified against official sources before you act on them</li><li>Are not professional advice in any field (legal, medical, financial, immigration)</li></ul>
+    <p>Free users have access to a curated FAQ Knowledge Base. Premium subscribers receive unlimited AI conversations subject to daily fair-use limits.</p>
 
-      <h2>5. Course and university information</h2>
-      <p>Tuition fees, course details, entry requirements, and rankings shown in the app are sourced from publicly available information and may change. Always verify the latest details directly with the university before applying or making financial decisions.</p>
+    <h2>7. Premium subscription</h2>
+    <p>Premium plans are sold through Google Play and managed by RevenueCat:</p>
+    <ul><li><strong>Monthly:</strong> AUD $9.99 per month, billed monthly</li><li><strong>Yearly:</strong> AUD $59.99 per year, billed annually</li><li><strong>Family:</strong> AUD $89.99 per year for up to 3 users</li></ul>
+    <p>Subscriptions auto-renew unless cancelled at least 24 hours before the renewal date. Cancel anytime through your Google Play account settings. Refunds are governed by Google Play's refund policy; we do not process refunds directly.</p>
 
-      <h2>6. ARIA AI assistant</h2>
-      <p>ARIA provides AI-generated responses based on a language model trained by Anthropic. AI responses:</p>
-      <ul>
-        <li>May contain errors, outdated information, or hallucinated details</li>
-        <li>Should be verified against official sources before acting on them</li>
-        <li>Are not professional advice in any field (legal, medical, financial, immigration)</li>
-      </ul>
-      <p>Free users have access to a curated FAQ Knowledge Base. Premium subscribers receive unlimited AI conversations subject to daily fair-use limits.</p>
+    <h2>8. Acceptable use</h2>
+    <p>You agree not to:</p>
+    <ul><li>Use the app for any illegal purpose</li><li>Attempt to reverse-engineer or extract source code</li><li>Abuse the ARIA assistant with automated requests or attempts to bypass usage limits</li><li>Share your premium subscription credentials outside the Family plan</li><li>Submit false or misleading information that may harm other users</li></ul>
+    <p>We may suspend or terminate accounts that violate these terms.</p>
 
-      <h2>7. Premium subscription</h2>
-      <p>Premium plans are sold through Google Play and managed by RevenueCat:</p>
-      <ul>
-        <li><strong>Monthly:</strong> AUD $9.99 per month, billed monthly</li>
-        <li><strong>Yearly:</strong> AUD $59.99 per year, billed annually</li>
-        <li><strong>Family:</strong> AUD $89.99 per year for up to 3 users</li>
-      </ul>
-      <p>Subscriptions auto-renew unless cancelled at least 24 hours before the renewal date. Cancel anytime through your Google Play account settings. Refunds are governed by Google Play's refund policy. We do not process refunds directly.</p>
+    <h2>9. Intellectual property</h2>
+    <p>The UniPath Australia app, its content (excluding user-generated content), branding and ARIA prompt engineering are owned by MustiIQ. You may use the app for personal, non-commercial purposes only. You may not copy, redistribute or build derivative products from our content without written permission.</p>
 
-      <h2>8. Acceptable use</h2>
-      <p>You agree not to:</p>
-      <ul>
-        <li>Use the app for any illegal purpose</li>
-        <li>Attempt to reverse-engineer or extract source code</li>
-        <li>Abuse the ARIA assistant with automated requests or attempts to bypass usage limits</li>
-        <li>Share your premium subscription credentials with others outside the Family plan</li>
-        <li>Submit false or misleading information that may harm other users</li>
-      </ul>
-      <p>We may suspend or terminate accounts that violate these terms.</p>
+    <h2>10. User-generated content</h2>
+    <p>Any messages you send to ARIA, notes you save, or feedback you provide remain your property. By submitting content, you grant us a limited licence to process it for the purpose of operating the app.</p>
 
-      <h2>9. Intellectual property</h2>
-      <p>The AusUni Guide app, its content (excluding user-generated content), branding, and ARIA prompt engineering are owned by Mustansir Yaqub. You may use the app for personal, non-commercial purposes only. You may not copy, redistribute, or build derivative products from our content without written permission.</p>
+    <h2>11. Disclaimer of warranties</h2>
+    <p>UniPath Australia is provided "as is" and "as available" without warranties of any kind, express or implied. We do not warrant that the app will be uninterrupted, error-free or accurate. Use of the app is at your own risk.</p>
 
-      <h2>10. User-generated content</h2>
-      <p>Any messages you send to ARIA, notes you save, or feedback you provide remain your property. By submitting content, you grant us a limited license to process it for the purpose of operating the app.</p>
+    <h2>12. Limitation of liability</h2>
+    <p>To the maximum extent permitted by law, UniPath Australia and its developer accept no liability for:</p>
+    <ul><li>Decisions made based on information in the app</li><li>Visa application outcomes</li><li>Financial losses, lost opportunities or expenses incurred</li><li>Service interruptions, data loss or third-party service failures</li></ul>
+    <p>Where liability cannot be excluded, it is limited to the amount you have paid for premium subscriptions in the 12 months preceding the claim.</p>
 
-      <h2>11. Disclaimer of warranties</h2>
-      <p>AusUni Guide is provided "as is" and "as available" without warranties of any kind, either express or implied. We do not warrant that the app will be uninterrupted, error-free, or accurate. Use of the app is at your own risk.</p>
+    <h2>13. Indemnification</h2>
+    <p>You agree to indemnify and hold UniPath Australia and MustiIQ harmless from any claims, damages or expenses arising from your misuse of the app or violation of these terms.</p>
 
-      <h2>12. Limitation of liability</h2>
-      <p>To the maximum extent permitted by law, AusUni Guide and its developers accept no liability for:</p>
-      <ul>
-        <li>Decisions made based on information in the app</li>
-        <li>Visa application outcomes</li>
-        <li>Financial losses, lost opportunities, or expenses incurred</li>
-        <li>Service interruptions, data loss, or third-party service failures</li>
-      </ul>
-      <p>Where liability cannot be excluded, it is limited to the amount you have paid for premium subscriptions in the 12 months preceding the claim.</p>
+    <h2>14. Changes to these terms</h2>
+    <p>We may update these Terms of Service from time to time. Material changes will be notified through the app or by email. Continued use after changes constitutes acceptance.</p>
 
-      <h2>13. Indemnification</h2>
-      <p>You agree to indemnify and hold AusUni Guide harmless from any claims, damages, or expenses arising from your misuse of the app or violation of these terms.</p>
+    <h2>15. Governing law</h2>
+    <p>These Terms of Service are governed by the laws of the State of Victoria, Australia. Any disputes will be subject to the exclusive jurisdiction of the courts of Victoria.</p>
 
-      <h2>14. Changes to these terms</h2>
-      <p>We may update these Terms of Service from time to time. Material changes will be notified through the app or via email. Continued use of the app after changes constitutes acceptance.</p>
+    <h2>16. Contact</h2>
+    <p><strong>Developer:</strong> MustiIQ<br><strong>App:</strong> UniPath Australia (com.mustansir.yaqub.ausuniguide)<br><strong>Email:</strong> <a href="mailto:supportmarketiq@gmail.com">supportmarketiq@gmail.com</a><br><strong>Location:</strong> Melbourne, Victoria, Australia</p>
 
-      <h2>15. Governing law</h2>
-      <p>These Terms of Service are governed by the laws of the State of Victoria, Australia. Any disputes will be subject to the exclusive jurisdiction of the courts of Victoria.</p>
-
-      <h2>16. Contact</h2>
-      <p>Questions about these terms:</p>
-      <p><strong>Email:</strong> <a href="mailto:supportmarketiq@gmail.com">supportmarketiq@gmail.com</a><br>
-      <strong>Location:</strong> Melbourne, Victoria, Australia</p>
-
-      <div class="callout" style="margin-top: 48px;">
-        <p>By using AusUni Guide, you acknowledge that you have read, understood, and agree to these Terms of Service.</p>
-      </div>
-
-    </div>
-  </main>
-
-  <footer>
-    <div class="container">
-      <p>© 2026 AusUni Guide · <a href="/">Home</a> · <a href="privacy.html">Privacy</a> · <a href="support.html">Support</a></p>
-    </div>
-  </footer>
-
-</body>
-</html>
+    <div class="callout" style="margin-top:44px;"><p>By using UniPath Australia you acknowledge that you have read, understood and agree to these Terms of Service.</p></div>
+  </div></main>
+  <footer><div class="container"><p>© 2026 UniPath Australia · Developed by MustiIQ · <a href="index.html">Home</a> · <a href="privacy.html">Privacy</a> · <a href="support.html">Support</a></p></div></footer>
+</body></html>

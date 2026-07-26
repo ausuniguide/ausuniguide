@@ -3,836 +3,176 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="AusUni Guide — Your trusted companion for studying at Australian universities. Course discovery, visa guidance, scholarships, and ARIA AI assistant.">
-  <meta name="keywords" content="Australian universities, international students, study in Australia, student visa, IELTS, scholarships, ARIA AI">
-  <meta property="og:title" content="AusUni Guide — Your Guide to Australian Universities">
-  <meta property="og:description" content="30 universities, 100+ courses, expert visa guidance, and AI-powered help for international students.">
+  <meta name="description" content="UniPath Australia — your trusted companion for studying at Australian universities. Course discovery, visa guidance, scholarships, and the ARIA AI assistant.">
+  <meta name="keywords" content="Australian universities, international students, study in Australia, student visa, IELTS, scholarships, UniPath Australia">
+  <meta property="og:title" content="UniPath Australia — Your Path to Australian Universities">
+  <meta property="og:description" content="30 universities, 100+ courses, expert visa guidance and AI-powered help for international students.">
   <meta property="og:type" content="website">
-  <title>AusUni Guide — Your Guide to Australian Universities</title>
+  <title>UniPath Australia — Your Path to Australian Universities</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;0,9..144,800;1,9..144,400;1,9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
-    /* ============ DESIGN TOKENS ============ */
     :root {
-      --navy: #0A2540;
-      --navy-2: #14375A;
-      --gold: #E5A442;
-      --gold-soft: #F4B860;
-      --eucalyptus: #5A8F7B;
-      --paper: #FBF8F3;
-      --paper-2: #F5EFE3;
-      --white: #FFFFFF;
-      --ink: #1A2332;
-      --muted: #5C6B80;
-      --line: #E5DDD0;
-      --radius: 14px;
-      --radius-sm: 8px;
-      --shadow-sm: 0 1px 2px rgba(10,37,64,0.06);
-      --shadow: 0 8px 24px rgba(10,37,64,0.08);
-      --shadow-lg: 0 24px 48px rgba(10,37,64,0.12);
+      --navy: #0A2540; --navy-2: #14375A; --gold: #E5A442; --gold-soft: #F4B860;
+      --eucalyptus: #5A8F7B; --paper: #FBF8F3; --paper-2: #F5EFE3; --white: #FFFFFF;
+      --ink: #1A2332; --muted: #5C6B80; --line: #E5DDD0;
+      --radius: 14px; --shadow-sm: 0 1px 2px rgba(10,37,64,0.06);
+      --shadow: 0 8px 24px rgba(10,37,64,0.08); --shadow-lg: 0 24px 48px rgba(10,37,64,0.12);
     }
-
     * { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
-    body {
-      font-family: 'Inter', -apple-system, sans-serif;
-      background: var(--paper);
-      color: var(--ink);
-      line-height: 1.55;
-      font-size: 16px;
-      -webkit-font-smoothing: antialiased;
-      overflow-x: hidden;
-    }
+    body { font-family: 'Inter', -apple-system, sans-serif; background: var(--paper); color: var(--ink); line-height: 1.55; font-size: 16px; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
     img { max-width: 100%; display: block; }
     a { color: inherit; text-decoration: none; }
+    .container { max-width: 1180px; margin: 0 auto; padding: 0 24px; }
+    .eyebrow { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.15em; color: var(--muted); }
 
-    /* ============ LAYOUT ============ */
-    .container {
-      max-width: 1180px;
-      margin: 0 auto;
-      padding: 0 24px;
-    }
-
-    /* ============ TYPOGRAPHY ============ */
-    .display {
-      font-family: 'Fraunces', Georgia, serif;
-      font-weight: 600;
-      letter-spacing: -0.02em;
-      line-height: 1.1;
-      font-variation-settings: 'opsz' 144, 'SOFT' 50;
-    }
-    .display em {
-      font-style: italic;
-      font-variation-settings: 'opsz' 144, 'SOFT' 100;
-      color: var(--gold);
-      font-weight: 500;
-    }
-    .eyebrow {
-      font-size: 11px;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.15em;
-      color: var(--muted);
-    }
-
-    /* ============ NAV ============ */
-    .nav {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      background: rgba(251, 248, 243, 0.92);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--line);
-    }
-    .nav-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 16px 0;
-    }
-    .logo {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-family: 'Fraunces', serif;
-      font-weight: 700;
-      font-size: 19px;
-      color: var(--navy);
-    }
-    .logo-mark {
-      width: 32px;
-      height: 32px;
-      background: var(--navy);
-      border-radius: 8px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--gold);
-      font-family: 'Fraunces', serif;
-      font-weight: 700;
-      font-size: 18px;
-      letter-spacing: -0.02em;
-    }
-    .nav-links {
-      display: flex;
-      gap: 32px;
-      align-items: center;
-    }
-    .nav-links a {
-      font-size: 14px;
-      font-weight: 500;
-      color: var(--muted);
-      transition: color 0.2s;
-    }
+    /* NAV */
+    .nav { position: sticky; top: 0; z-index: 100; background: rgba(251, 248, 243, 0.92); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid var(--line); }
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; padding: 16px 0; }
+    .logo { display: flex; align-items: center; gap: 10px; font-family: 'Fraunces', serif; font-weight: 700; font-size: 19px; color: var(--navy); }
+    .logo-mark { width: 34px; height: 34px; background: var(--navy); border-radius: 9px; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; }
+    .logo-mark svg { width: 22px; height: 22px; }
+    .nav-links { display: flex; gap: 32px; align-items: center; }
+    .nav-links a { font-size: 14px; font-weight: 500; color: var(--muted); transition: color 0.2s; }
     .nav-links a:hover { color: var(--navy); }
-    .nav-cta {
-      background: var(--navy);
-      color: var(--paper) !important;
-      padding: 9px 18px;
-      border-radius: 999px;
-      font-weight: 600;
-      transition: all 0.2s;
-    }
+    .nav-cta { background: var(--navy); color: var(--paper) !important; padding: 9px 18px; border-radius: 999px; font-weight: 600; transition: all 0.2s; }
     .nav-cta:hover { background: var(--navy-2); color: var(--gold) !important; }
-    @media (max-width: 720px) {
-      .nav-links a:not(.nav-cta) { display: none; }
-    }
+    @media (max-width: 720px) { .nav-links a:not(.nav-cta) { display: none; } }
 
-    /* ============ HERO ============ */
-    .hero {
-      padding: 80px 0 100px;
-      position: relative;
-      overflow: hidden;
-    }
-    .hero::before {
-      content: '';
-      position: absolute;
-      top: -200px;
-      right: -200px;
-      width: 600px;
-      height: 600px;
-      background: radial-gradient(circle, rgba(229, 164, 66, 0.12) 0%, transparent 60%);
-      pointer-events: none;
-    }
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.1fr 1fr;
-      gap: 64px;
-      align-items: center;
-      position: relative;
-    }
-    @media (max-width: 900px) {
-      .hero { padding: 48px 0 64px; }
-      .hero-grid { grid-template-columns: 1fr; gap: 48px; text-align: center; }
-    }
-    .hero-eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 6px 14px;
-      background: var(--paper-2);
-      border: 1px solid var(--line);
-      border-radius: 999px;
-      margin-bottom: 24px;
-      font-size: 12px;
-      font-weight: 600;
-      color: var(--navy);
-    }
-    .hero-eyebrow::before {
-      content: '';
-      width: 6px;
-      height: 6px;
-      background: var(--eucalyptus);
-      border-radius: 50%;
-    }
-    .hero h1 {
-      font-family: 'Fraunces', serif;
-      font-size: clamp(40px, 5.5vw, 64px);
-      line-height: 1.05;
-      font-weight: 600;
-      letter-spacing: -0.025em;
-      color: var(--navy);
-      margin-bottom: 22px;
-    }
-    .hero h1 em {
-      font-style: italic;
-      font-weight: 500;
-      color: var(--gold);
-      font-variation-settings: 'opsz' 144, 'SOFT' 100;
-    }
-    .hero-lede {
-      font-size: 18px;
-      color: var(--muted);
-      max-width: 520px;
-      margin-bottom: 36px;
-      line-height: 1.65;
-    }
-    @media (max-width: 900px) {
-      .hero-lede { margin-left: auto; margin-right: auto; }
-      .hero-eyebrow { margin-left: auto; margin-right: auto; }
-    }
-    .cta-row {
-      display: flex;
-      gap: 14px;
-      flex-wrap: wrap;
-    }
-    @media (max-width: 900px) {
-      .cta-row { justify-content: center; }
-    }
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      padding: 14px 26px;
-      border-radius: 999px;
-      font-weight: 600;
-      font-size: 15px;
-      transition: all 0.2s;
-      border: none;
-      cursor: pointer;
-      font-family: inherit;
-    }
-    .btn-primary {
-      background: var(--navy);
-      color: var(--white);
-    }
-    .btn-primary:hover {
-      background: var(--navy-2);
-      transform: translateY(-1px);
-      box-shadow: var(--shadow);
-    }
-    .btn-secondary {
-      background: transparent;
-      color: var(--navy);
-      border: 1.5px solid var(--navy);
-    }
-    .btn-secondary:hover {
-      background: var(--navy);
-      color: var(--white);
-    }
+    /* HERO */
+    .hero { padding: 80px 0 100px; position: relative; overflow: hidden; }
+    .hero::before { content: ''; position: absolute; top: -200px; right: -200px; width: 600px; height: 600px; background: radial-gradient(circle, rgba(229, 164, 66, 0.12) 0%, transparent 60%); pointer-events: none; }
+    .hero-grid { display: grid; grid-template-columns: 1.1fr 1fr; gap: 64px; align-items: center; position: relative; }
+    @media (max-width: 900px) { .hero { padding: 48px 0 64px; } .hero-grid { grid-template-columns: 1fr; gap: 48px; text-align: center; } }
+    .hero-eyebrow { display: inline-flex; align-items: center; gap: 8px; padding: 6px 14px; background: var(--paper-2); border: 1px solid var(--line); border-radius: 999px; margin-bottom: 24px; font-size: 12px; font-weight: 600; color: var(--navy); }
+    .hero-eyebrow::before { content: ''; width: 6px; height: 6px; background: var(--eucalyptus); border-radius: 50%; }
+    .hero h1 { font-family: 'Fraunces', serif; font-size: clamp(40px, 5.5vw, 64px); line-height: 1.05; font-weight: 600; letter-spacing: -0.025em; color: var(--navy); margin-bottom: 22px; }
+    .hero h1 em { font-style: italic; font-weight: 500; color: var(--gold); }
+    .hero-lede { font-size: 18px; color: var(--muted); max-width: 520px; margin-bottom: 36px; line-height: 1.65; }
+    @media (max-width: 900px) { .hero-lede { margin-left: auto; margin-right: auto; } .hero-eyebrow { margin-left: auto; margin-right: auto; } }
+    .cta-row { display: flex; gap: 14px; flex-wrap: wrap; }
+    @media (max-width: 900px) { .cta-row { justify-content: center; } }
+    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 14px 26px; border-radius: 999px; font-weight: 600; font-size: 15px; transition: all 0.2s; border: none; cursor: pointer; font-family: inherit; }
+    .btn-primary { background: var(--navy); color: var(--white); }
+    .btn-primary:hover { background: var(--navy-2); transform: translateY(-1px); box-shadow: var(--shadow); }
+    .btn-secondary { background: transparent; color: var(--navy); border: 1.5px solid var(--navy); }
+    .btn-secondary:hover { background: var(--navy); color: var(--white); }
 
-    /* Hero phone mockup */
-    .hero-visual {
-      position: relative;
-      display: flex;
-      justify-content: center;
-    }
-    .phone-frame {
-      width: 280px;
-      height: 560px;
-      background: var(--navy);
-      border-radius: 36px;
-      padding: 12px;
-      box-shadow: var(--shadow-lg);
-      position: relative;
-      transform: rotate(-3deg);
-    }
-    .phone-frame::before {
-      content: '';
-      position: absolute;
-      top: 18px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 90px;
-      height: 22px;
-      background: #000;
-      border-radius: 12px;
-      z-index: 2;
-    }
-    .phone-screen {
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(180deg, var(--navy) 0%, #1B3A5C 100%);
-      border-radius: 26px;
-      padding: 50px 20px 20px;
-      color: var(--paper);
-      font-size: 13px;
-    }
-    .phone-screen .greeting {
-      font-family: 'Fraunces', serif;
-      font-size: 26px;
-      font-weight: 600;
-      margin-bottom: 6px;
-      letter-spacing: -0.01em;
-    }
-    .phone-screen .greeting em {
-      font-style: italic;
-      color: var(--gold);
-      font-weight: 500;
-    }
-    .phone-screen .sub {
-      font-size: 12px;
-      color: rgba(255,255,255,0.6);
-      margin-bottom: 26px;
-    }
-    .phone-card {
-      background: rgba(255,255,255,0.08);
-      backdrop-filter: blur(20px);
-      border: 1px solid rgba(255,255,255,0.15);
-      border-radius: 14px;
-      padding: 14px;
-      margin-bottom: 12px;
-    }
-    .phone-card-label {
-      font-size: 10px;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      color: var(--gold);
-      font-weight: 600;
-      margin-bottom: 6px;
-    }
-    .phone-card-text {
-      font-size: 13px;
-      font-weight: 500;
-      line-height: 1.4;
-    }
-    .phone-floating {
-      position: absolute;
-      background: var(--white);
-      color: var(--navy);
-      padding: 14px 16px;
-      border-radius: 12px;
-      box-shadow: var(--shadow);
-      font-size: 13px;
-      font-weight: 600;
-      transform: rotate(3deg);
-      max-width: 200px;
-    }
+    .hero-visual { position: relative; display: flex; justify-content: center; }
+    .phone-frame { width: 280px; height: 560px; background: var(--navy); border-radius: 36px; padding: 12px; box-shadow: var(--shadow-lg); position: relative; transform: rotate(-3deg); }
+    .phone-frame::before { content: ''; position: absolute; top: 18px; left: 50%; transform: translateX(-50%); width: 90px; height: 22px; background: #000; border-radius: 12px; z-index: 2; }
+    .phone-screen { width: 100%; height: 100%; background: linear-gradient(180deg, var(--navy) 0%, #1B3A5C 100%); border-radius: 26px; padding: 50px 20px 20px; color: var(--paper); font-size: 13px; }
+    .phone-screen .greeting { font-family: 'Fraunces', serif; font-size: 26px; font-weight: 600; margin-bottom: 6px; letter-spacing: -0.01em; }
+    .phone-screen .greeting em { font-style: italic; color: var(--gold); font-weight: 500; }
+    .phone-screen .sub { font-size: 12px; color: rgba(255,255,255,0.6); margin-bottom: 26px; }
+    .phone-card { background: rgba(255,255,255,0.08); backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.15); border-radius: 14px; padding: 14px; margin-bottom: 12px; }
+    .phone-card-label { font-size: 10px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--gold); font-weight: 600; margin-bottom: 6px; }
+    .phone-card-text { font-size: 13px; font-weight: 500; line-height: 1.4; }
+    .phone-floating { position: absolute; background: var(--white); color: var(--navy); padding: 14px 16px; border-radius: 12px; box-shadow: var(--shadow); font-size: 13px; font-weight: 600; transform: rotate(3deg); max-width: 200px; }
     .phone-floating.tl { top: 30px; left: -30px; }
     .phone-floating.br { bottom: 60px; right: -20px; transform: rotate(-2deg); }
-    .phone-floating .icon {
-      display: inline-block;
-      margin-right: 8px;
-    }
-    .phone-floating .meta {
-      font-size: 11px;
-      color: var(--muted);
-      font-weight: 500;
-      margin-top: 2px;
-    }
-    @media (max-width: 900px) {
-      .phone-floating.tl { left: -10px; }
-      .phone-floating.br { right: -10px; }
-    }
-    @media (max-width: 500px) {
-      .phone-frame { transform: rotate(0) scale(0.9); }
-      .phone-floating { display: none; }
-    }
+    .phone-floating .meta { font-size: 11px; color: var(--muted); font-weight: 500; margin-top: 2px; }
+    @media (max-width: 900px) { .phone-floating.tl { left: -10px; } .phone-floating.br { right: -10px; } }
+    @media (max-width: 500px) { .phone-frame { transform: rotate(0) scale(0.9); } .phone-floating { display: none; } }
 
-    /* ============ STAMP / SIGNATURE ELEMENT ============ */
-    .stamp {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 90px;
-      height: 90px;
-      border: 2px solid var(--gold);
-      border-radius: 50%;
-      position: absolute;
-      transform: rotate(-12deg);
-      font-family: 'Fraunces', serif;
-      font-weight: 700;
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      color: var(--gold);
-      text-align: center;
-      line-height: 1.1;
-      background: rgba(251, 248, 243, 0.6);
-    }
+    /* STATS */
+    .stats { background: var(--navy); color: var(--paper); padding: 56px 0; }
+    .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; text-align: center; }
+    @media (max-width: 720px) { .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 36px 24px; } }
+    .stat-num { font-family: 'Fraunces', serif; font-size: 56px; font-weight: 600; color: var(--gold); letter-spacing: -0.03em; line-height: 1; margin-bottom: 8px; }
+    .stat-label { font-size: 13px; color: rgba(255,255,255,0.7); font-weight: 500; }
 
-    /* ============ STATS BAND ============ */
-    .stats {
-      background: var(--navy);
-      color: var(--paper);
-      padding: 56px 0;
-    }
-    .stats-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 32px;
-      text-align: center;
-    }
-    @media (max-width: 720px) {
-      .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 36px 24px; }
-    }
-    .stat-num {
-      font-family: 'Fraunces', serif;
-      font-size: 56px;
-      font-weight: 600;
-      color: var(--gold);
-      letter-spacing: -0.03em;
-      line-height: 1;
-      margin-bottom: 8px;
-    }
-    .stat-label {
-      font-size: 13px;
-      color: rgba(255,255,255,0.7);
-      font-weight: 500;
-    }
+    section.standard { padding: 100px 0; }
+    @media (max-width: 720px) { section.standard { padding: 64px 0; } }
+    .section-header { max-width: 720px; margin: 0 auto 56px; text-align: center; }
+    .section-header h2 { font-family: 'Fraunces', serif; font-size: clamp(30px, 4vw, 44px); font-weight: 600; color: var(--navy); letter-spacing: -0.02em; line-height: 1.15; margin: 12px 0 16px; }
+    .section-header h2 em { font-style: italic; color: var(--gold); font-weight: 500; }
+    .section-header p { font-size: 17px; color: var(--muted); line-height: 1.6; }
 
-    /* ============ SECTIONS ============ */
-    section.standard {
-      padding: 100px 0;
-    }
-    @media (max-width: 720px) {
-      section.standard { padding: 64px 0; }
-    }
-    .section-header {
-      max-width: 720px;
-      margin: 0 auto 56px;
-      text-align: center;
-    }
-    .section-header h2 {
-      font-family: 'Fraunces', serif;
-      font-size: clamp(30px, 4vw, 44px);
-      font-weight: 600;
-      color: var(--navy);
-      letter-spacing: -0.02em;
-      line-height: 1.15;
-      margin: 12px 0 16px;
-    }
-    .section-header h2 em {
-      font-style: italic;
-      color: var(--gold);
-      font-weight: 500;
-    }
-    .section-header p {
-      font-size: 17px;
-      color: var(--muted);
-      line-height: 1.6;
-    }
+    /* FEATURES */
+    .features { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    @media (max-width: 900px) { .features { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 600px) { .features { grid-template-columns: 1fr; } }
+    .feature { background: var(--white); border: 1px solid var(--line); border-radius: var(--radius); padding: 28px 24px; transition: all 0.25s; }
+    .feature:hover { transform: translateY(-3px); box-shadow: var(--shadow); border-color: var(--gold-soft); }
+    .feature-icon { width: 44px; height: 44px; background: var(--paper-2); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 22px; margin-bottom: 16px; }
+    .feature h3 { font-family: 'Fraunces', serif; font-size: 19px; font-weight: 600; color: var(--navy); margin-bottom: 8px; letter-spacing: -0.01em; }
+    .feature p { font-size: 14px; color: var(--muted); line-height: 1.6; }
 
-    /* ============ FEATURES GRID ============ */
-    .features {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-    }
-    @media (max-width: 900px) {
-      .features { grid-template-columns: repeat(2, 1fr); }
-    }
-    @media (max-width: 600px) {
-      .features { grid-template-columns: 1fr; }
-    }
-    .feature {
-      background: var(--white);
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      padding: 28px 24px;
-      transition: all 0.25s;
-      position: relative;
-    }
-    .feature:hover {
-      transform: translateY(-3px);
-      box-shadow: var(--shadow);
-      border-color: var(--gold-soft);
-    }
-    .feature-icon {
-      width: 44px;
-      height: 44px;
-      background: var(--paper-2);
-      border-radius: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 22px;
-      margin-bottom: 16px;
-    }
-    .feature h3 {
-      font-family: 'Fraunces', serif;
-      font-size: 19px;
-      font-weight: 600;
-      color: var(--navy);
-      margin-bottom: 8px;
-      letter-spacing: -0.01em;
-    }
-    .feature p {
-      font-size: 14px;
-      color: var(--muted);
-      line-height: 1.6;
-    }
+    /* PREMIUM */
+    .premium { background: var(--paper-2); position: relative; overflow: hidden; }
+    .premium::before { content: ''; position: absolute; bottom: -150px; left: -100px; width: 500px; height: 500px; background: radial-gradient(circle, rgba(90, 143, 123, 0.15) 0%, transparent 60%); }
+    .pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; max-width: 980px; margin: 0 auto; position: relative; }
+    @media (max-width: 800px) { .pricing-grid { grid-template-columns: 1fr; } }
+    .price-card { background: var(--white); border: 1.5px solid var(--line); border-radius: 18px; padding: 32px 26px; position: relative; transition: all 0.25s; }
+    .price-card.featured { border-color: var(--navy); transform: scale(1.03); box-shadow: var(--shadow); }
+    @media (max-width: 800px) { .price-card.featured { transform: scale(1); } }
+    .price-card.featured::before { content: 'Best value'; position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: var(--navy); color: var(--gold); padding: 4px 14px; border-radius: 999px; font-size: 11px; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; }
+    .price-card .eyebrow { margin-bottom: 16px; }
+    .price-amount { font-family: 'Fraunces', serif; font-size: 44px; font-weight: 600; color: var(--navy); line-height: 1; letter-spacing: -0.02em; }
+    .price-amount .currency { font-size: 22px; vertical-align: super; margin-right: 2px; color: var(--muted); }
+    .price-amount .period { font-size: 16px; color: var(--muted); font-family: 'Inter', sans-serif; font-weight: 500; margin-left: 4px; }
+    .price-tagline { font-size: 13px; color: var(--muted); margin-top: 8px; margin-bottom: 22px; }
+    .price-features { list-style: none; margin-bottom: 26px; }
+    .price-features li { padding: 8px 0; font-size: 14px; color: var(--ink); display: flex; align-items: flex-start; gap: 10px; }
+    .price-features li::before { content: ''; width: 18px; height: 18px; flex-shrink: 0; margin-top: 2px; background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 12 12'><circle cx='6' cy='6' r='6' fill='%23F5EFE3'/><path d='M2.5 6L5 8.5L9.5 4' stroke='%235A8F7B' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round' fill='none'/></svg>"); background-repeat: no-repeat; background-position: center; }
 
-    /* ============ PREMIUM SECTION ============ */
-    .premium {
-      background: var(--paper-2);
-      position: relative;
-      overflow: hidden;
-    }
-    .premium::before {
-      content: '';
-      position: absolute;
-      bottom: -150px;
-      left: -100px;
-      width: 500px;
-      height: 500px;
-      background: radial-gradient(circle, rgba(90, 143, 123, 0.15) 0%, transparent 60%);
-    }
-    .pricing-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-      max-width: 980px;
-      margin: 0 auto;
-      position: relative;
-    }
-    @media (max-width: 800px) {
-      .pricing-grid { grid-template-columns: 1fr; }
-    }
-    .price-card {
-      background: var(--white);
-      border: 1.5px solid var(--line);
-      border-radius: 18px;
-      padding: 32px 26px;
-      position: relative;
-      transition: all 0.25s;
-    }
-    .price-card.featured {
-      border-color: var(--navy);
-      transform: scale(1.03);
-      box-shadow: var(--shadow);
-    }
-    @media (max-width: 800px) {
-      .price-card.featured { transform: scale(1); }
-    }
-    .price-card.featured::before {
-      content: 'Best value';
-      position: absolute;
-      top: -12px;
-      left: 50%;
-      transform: translateX(-50%);
-      background: var(--navy);
-      color: var(--gold);
-      padding: 4px 14px;
-      border-radius: 999px;
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
-    }
-    .price-card .eyebrow {
-      margin-bottom: 16px;
-    }
-    .price-amount {
-      font-family: 'Fraunces', serif;
-      font-size: 44px;
-      font-weight: 600;
-      color: var(--navy);
-      line-height: 1;
-      letter-spacing: -0.02em;
-    }
-    .price-amount .currency {
-      font-size: 22px;
-      vertical-align: super;
-      margin-right: 2px;
-      color: var(--muted);
-    }
-    .price-amount .period {
-      font-size: 16px;
-      color: var(--muted);
-      font-family: 'Inter', sans-serif;
-      font-weight: 500;
-      margin-left: 4px;
-    }
-    .price-tagline {
-      font-size: 13px;
-      color: var(--muted);
-      margin-top: 8px;
-      margin-bottom: 22px;
-    }
-    .price-features {
-      list-style: none;
-      margin-bottom: 26px;
-    }
-    .price-features li {
-      padding: 8px 0;
-      font-size: 14px;
-      color: var(--ink);
-      display: flex;
-      align-items: flex-start;
-      gap: 10px;
-    }
-    .price-features li::before {
-      content: '';
-      width: 18px;
-      height: 18px;
-      background: var(--paper-2);
-      border-radius: 50%;
-      flex-shrink: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'><path d='M2.5 6L5 8.5L9.5 4' stroke='%235A8F7B' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' fill='none'/></svg>");
-      background-repeat: no-repeat;
-      background-position: center;
-      margin-top: 2px;
-    }
-
-    /* ============ FAQ ============ */
-    .faq-list {
-      max-width: 780px;
-      margin: 0 auto;
-    }
-    .faq-item {
-      background: var(--white);
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      margin-bottom: 12px;
-      overflow: hidden;
-      transition: all 0.2s;
-    }
-    .faq-item:hover {
-      border-color: var(--gold-soft);
-    }
-    .faq-item summary {
-      padding: 22px 28px;
-      cursor: pointer;
-      list-style: none;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 16px;
-      font-weight: 600;
-      font-size: 16px;
-      color: var(--navy);
-    }
+    /* FAQ */
+    .faq-list { max-width: 780px; margin: 0 auto; }
+    .faq-item { background: var(--white); border: 1px solid var(--line); border-radius: var(--radius); margin-bottom: 12px; overflow: hidden; transition: all 0.2s; }
+    .faq-item:hover { border-color: var(--gold-soft); }
+    .faq-item summary { padding: 22px 28px; cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; gap: 16px; font-weight: 600; font-size: 16px; color: var(--navy); }
     .faq-item summary::-webkit-details-marker { display: none; }
-    .faq-item summary::after {
-      content: '+';
-      font-family: 'Fraunces', serif;
-      font-size: 26px;
-      font-weight: 400;
-      color: var(--gold);
-      transition: transform 0.2s;
-      line-height: 1;
-    }
-    .faq-item[open] summary::after {
-      content: '−';
-    }
-    .faq-answer {
-      padding: 0 28px 24px;
-      color: var(--muted);
-      font-size: 15px;
-      line-height: 1.65;
-    }
+    .faq-item summary::after { content: '+'; font-family: 'Fraunces', serif; font-size: 26px; font-weight: 400; color: var(--gold); transition: transform 0.2s; line-height: 1; }
+    .faq-item[open] summary::after { content: '−'; }
+    .faq-answer { padding: 0 28px 24px; color: var(--muted); font-size: 15px; line-height: 1.65; }
 
-    /* ============ STORY / ABOUT ============ */
-    .story {
-      background: var(--navy);
-      color: var(--paper);
-    }
-    .story .container {
-      max-width: 800px;
-      text-align: center;
-    }
-    .story h2 {
-      font-family: 'Fraunces', serif;
-      font-size: clamp(28px, 4vw, 40px);
-      font-weight: 600;
-      letter-spacing: -0.02em;
-      margin-bottom: 24px;
-    }
-    .story h2 em {
-      font-style: italic;
-      color: var(--gold);
-      font-weight: 500;
-    }
-    .story p {
-      font-size: 17px;
-      line-height: 1.75;
-      color: rgba(255,255,255,0.85);
-      margin-bottom: 18px;
-    }
-    .story-signature {
-      margin-top: 36px;
-      font-family: 'Fraunces', serif;
-      font-style: italic;
-      font-size: 17px;
-      color: var(--gold);
-    }
+    /* STORY */
+    .story { background: var(--navy); color: var(--paper); }
+    .story .container { max-width: 800px; text-align: center; }
+    .story h2 { font-family: 'Fraunces', serif; font-size: clamp(28px, 4vw, 40px); font-weight: 600; letter-spacing: -0.02em; margin-bottom: 24px; }
+    .story h2 em { font-style: italic; color: var(--gold); font-weight: 500; }
+    .story p { font-size: 17px; line-height: 1.75; color: rgba(255,255,255,0.85); margin-bottom: 18px; }
+    .story-signature { margin-top: 36px; font-family: 'Fraunces', serif; font-style: italic; font-size: 17px; color: var(--gold); }
 
-    /* ============ FINAL CTA ============ */
-    .final-cta {
-      padding: 96px 0;
-      text-align: center;
-      background: var(--paper);
-    }
-    .final-cta h2 {
-      font-family: 'Fraunces', serif;
-      font-size: clamp(34px, 4.5vw, 52px);
-      font-weight: 600;
-      color: var(--navy);
-      letter-spacing: -0.025em;
-      line-height: 1.1;
-      margin-bottom: 18px;
-      max-width: 720px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-    .final-cta h2 em {
-      font-style: italic;
-      color: var(--gold);
-      font-weight: 500;
-    }
-    .final-cta p {
-      font-size: 18px;
-      color: var(--muted);
-      margin-bottom: 36px;
-      max-width: 580px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-    .play-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 12px;
-      background: var(--navy);
-      color: var(--white);
-      padding: 14px 24px;
-      border-radius: 14px;
-      transition: all 0.2s;
-    }
-    .play-badge:hover {
-      background: var(--navy-2);
-      transform: translateY(-2px);
-      box-shadow: var(--shadow);
-    }
-    .play-badge svg {
-      width: 28px;
-      height: 28px;
-      fill: var(--gold);
-    }
-    .play-badge .badge-text {
-      text-align: left;
-      line-height: 1.2;
-    }
-    .play-badge .badge-small {
-      font-size: 10px;
-      opacity: 0.7;
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
-    }
-    .play-badge .badge-big {
-      font-size: 18px;
-      font-weight: 600;
-      font-family: 'Fraunces', serif;
-    }
+    /* FINAL CTA */
+    .final-cta { padding: 96px 0; text-align: center; background: var(--paper); }
+    .final-cta h2 { font-family: 'Fraunces', serif; font-size: clamp(34px, 4.5vw, 52px); font-weight: 600; color: var(--navy); letter-spacing: -0.025em; line-height: 1.1; margin-bottom: 18px; max-width: 720px; margin-left: auto; margin-right: auto; }
+    .final-cta h2 em { font-style: italic; color: var(--gold); font-weight: 500; }
+    .final-cta p { font-size: 18px; color: var(--muted); margin-bottom: 36px; max-width: 580px; margin-left: auto; margin-right: auto; }
+    .play-badge { display: inline-flex; align-items: center; gap: 12px; background: var(--navy); color: var(--white); padding: 14px 24px; border-radius: 14px; transition: all 0.2s; }
+    .play-badge:hover { background: var(--navy-2); transform: translateY(-2px); box-shadow: var(--shadow); }
+    .play-badge svg { width: 28px; height: 28px; fill: var(--gold); }
+    .play-badge .badge-text { text-align: left; line-height: 1.2; }
+    .play-badge .badge-small { font-size: 10px; opacity: 0.7; letter-spacing: 0.05em; text-transform: uppercase; }
+    .play-badge .badge-big { font-size: 18px; font-weight: 600; font-family: 'Fraunces', serif; }
 
-    /* ============ FOOTER ============ */
-    footer {
-      background: var(--ink);
-      color: rgba(255,255,255,0.7);
-      padding: 56px 0 32px;
-      font-size: 14px;
-    }
-    .footer-grid {
-      display: grid;
-      grid-template-columns: 2fr 1fr 1fr 1fr;
-      gap: 48px;
-      margin-bottom: 40px;
-    }
-    @media (max-width: 720px) {
-      .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
-    }
-    .footer-brand .logo {
-      color: var(--white);
-      margin-bottom: 14px;
-    }
-    .footer-brand p {
-      max-width: 320px;
-      line-height: 1.65;
-      font-size: 13px;
-    }
-    .footer-col h4 {
-      font-family: 'Fraunces', serif;
-      color: var(--white);
-      font-size: 14px;
-      font-weight: 600;
-      margin-bottom: 16px;
-      letter-spacing: 0.02em;
-    }
-    .footer-col ul {
-      list-style: none;
-    }
-    .footer-col li {
-      margin-bottom: 10px;
-    }
-    .footer-col a {
-      color: rgba(255,255,255,0.65);
-      transition: color 0.2s;
-      font-size: 13px;
-    }
+    /* FOOTER */
+    footer { background: var(--ink); color: rgba(255,255,255,0.7); padding: 56px 0 32px; font-size: 14px; }
+    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px; margin-bottom: 40px; }
+    @media (max-width: 720px) { .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; } }
+    .footer-brand .logo { color: var(--white); margin-bottom: 14px; }
+    .footer-brand p { max-width: 320px; line-height: 1.65; font-size: 13px; }
+    .footer-col h4 { font-family: 'Fraunces', serif; color: var(--white); font-size: 14px; font-weight: 600; margin-bottom: 16px; letter-spacing: 0.02em; }
+    .footer-col ul { list-style: none; }
+    .footer-col li { margin-bottom: 10px; }
+    .footer-col a { color: rgba(255,255,255,0.65); transition: color 0.2s; font-size: 13px; }
     .footer-col a:hover { color: var(--gold); }
-    .footer-bottom {
-      border-top: 1px solid rgba(255,255,255,0.1);
-      padding-top: 24px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 16px;
-      font-size: 12px;
-    }
-    .footer-disclaimer {
-      max-width: 620px;
-      font-size: 11px;
-      opacity: 0.6;
-      line-height: 1.6;
-      margin-top: 20px;
-    }
+    .footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 24px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; font-size: 12px; }
+    .footer-disclaimer { max-width: 620px; font-size: 11px; opacity: 0.6; line-height: 1.6; margin-top: 20px; }
   </style>
 </head>
 <body>
 
-  <!-- ============ NAV ============ -->
   <nav class="nav">
     <div class="container nav-inner">
-      <a href="/" class="logo">
-        <span class="logo-mark">A</span>
-        <span>AusUni Guide</span>
+      <a href="index.html" class="logo">
+        <span class="logo-mark">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 3L1 8l11 5 9-4.09V15h2V8L12 3zM5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z" fill="#E5A442"/></svg>
+        </span>
+        <span>UniPath Australia</span>
       </a>
       <div class="nav-links">
         <a href="#features">Features</a>
@@ -844,13 +184,12 @@
     </div>
   </nav>
 
-  <!-- ============ HERO ============ -->
   <section class="hero">
     <div class="container">
       <div class="hero-grid">
         <div>
           <span class="hero-eyebrow">Now live on Google Play</span>
-          <h1>Your guide to <em>Australian</em> university life.</h1>
+          <h1>Your path to <em>Australian</em> university life.</h1>
           <p class="hero-lede">
             From course discovery to visa approval — explore 30 universities, 100+ courses, scholarship databases, and an AI assistant trained on the Australian student journey.
           </p>
@@ -862,8 +201,8 @@
 
         <div class="hero-visual">
           <div class="phone-floating tl">
-            <span class="icon">🎓</span>Bachelor of AI
-            <div class="meta">Monash University · AUD $45,500/yr</div>
+            🎓 Bachelor of AI
+            <div class="meta">Monash University · AUD $44,000/yr</div>
           </div>
           <div class="phone-frame">
             <div class="phone-screen">
@@ -884,7 +223,7 @@
             </div>
           </div>
           <div class="phone-floating br">
-            <span class="icon">🤖</span>ARIA · Premium
+            🤖 ARIA · Premium
             <div class="meta">Unlimited AI guidance</div>
           </div>
         </div>
@@ -892,31 +231,17 @@
     </div>
   </section>
 
-  <!-- ============ STATS ============ -->
   <section class="stats">
     <div class="container">
       <div class="stats-grid">
-        <div>
-          <div class="stat-num">30</div>
-          <div class="stat-label">Australian universities</div>
-        </div>
-        <div>
-          <div class="stat-num">100+</div>
-          <div class="stat-label">Courses across 15 fields</div>
-        </div>
-        <div>
-          <div class="stat-num">52</div>
-          <div class="stat-label">Expert FAQ answers</div>
-        </div>
-        <div>
-          <div class="stat-num">500</div>
-          <div class="stat-label">Subclass 500 visa guide</div>
-        </div>
+        <div><div class="stat-num">30</div><div class="stat-label">Australian universities</div></div>
+        <div><div class="stat-num">100+</div><div class="stat-label">Courses across 15 fields</div></div>
+        <div><div class="stat-num">52</div><div class="stat-label">Expert FAQ answers</div></div>
+        <div><div class="stat-num">500</div><div class="stat-label">Subclass 500 visa guide</div></div>
       </div>
     </div>
   </section>
 
-  <!-- ============ FEATURES ============ -->
   <section class="standard" id="features">
     <div class="container">
       <div class="section-header">
@@ -924,247 +249,111 @@
         <h2>Everything you need, <em>nothing you don't.</em></h2>
         <p>Built specifically for international students applying to Australian universities. No noise, no upsells you don't need — just clear, actionable guidance.</p>
       </div>
-
       <div class="features">
-        <div class="feature">
-          <div class="feature-icon">🎓</div>
-          <h3>Course explorer</h3>
-          <p>Search 100+ courses across 15 disciplines including Artificial Intelligence, Nursing, Architecture, and Psychology. Filter by university, level, and fees.</p>
-        </div>
-        <div class="feature">
-          <div class="feature-icon">🛂</div>
-          <h3>Subclass 500 visa guide</h3>
-          <p>Step-by-step walkthrough of the Australian student visa process. Document checklists, timelines, GTE guidance, and approved consultant directories.</p>
-        </div>
-        <div class="feature">
-          <div class="feature-icon">💰</div>
-          <h3>Scholarship database</h3>
-          <p>Australia Awards, Destination Australia, and university-specific funding. Filter by eligibility and deadline so you never miss an opportunity.</p>
-        </div>
-        <div class="feature">
-          <div class="feature-icon">🏛️</div>
-          <h3>University comparison</h3>
-          <p>Compare up to 4 universities side-by-side — rankings, fees, locations, student satisfaction, and accommodation options. Make confident decisions.</p>
-        </div>
-        <div class="feature">
-          <div class="feature-icon">🏠</div>
-          <h3>Life in Australia</h3>
-          <p>Accommodation guides for each city, cost-of-living breakdowns, job search tools, and a 5-stage pre-departure checklist that follows you to arrival.</p>
-        </div>
-        <div class="feature">
-          <div class="feature-icon">🤖</div>
-          <h3>ARIA — your AI advisor</h3>
-          <p>Free knowledge base with 52 expert answers. Premium unlocks unlimited AI conversations trained on the Australian student journey.</p>
-        </div>
+        <div class="feature"><div class="feature-icon">🎓</div><h3>Course explorer</h3><p>Search 100+ courses across 15 disciplines including Artificial Intelligence, Nursing, Architecture and Psychology. Filter by university, level and fees.</p></div>
+        <div class="feature"><div class="feature-icon">🛂</div><h3>Subclass 500 visa guide</h3><p>Step-by-step walkthrough of the Australian student visa process. Document checklists, timelines, GTE guidance and registered consultant directories.</p></div>
+        <div class="feature"><div class="feature-icon">💰</div><h3>Scholarship database</h3><p>Australia Awards, Destination Australia and university-specific funding. Filter by eligibility and application window so you never miss an opportunity.</p></div>
+        <div class="feature"><div class="feature-icon">🏛️</div><h3>University comparison</h3><p>Compare up to 4 universities side-by-side — rankings, fees, locations and accommodation options. Make confident decisions.</p></div>
+        <div class="feature"><div class="feature-icon">🏠</div><h3>Life in Australia</h3><p>Accommodation guides for each city, cost-of-living breakdowns, job search tools and a 5-stage pre-departure checklist that follows you to arrival.</p></div>
+        <div class="feature"><div class="feature-icon">🤖</div><h3>ARIA — your AI advisor</h3><p>Free knowledge base with 52 expert answers. Premium unlocks unlimited AI conversations trained on the Australian student journey.</p></div>
       </div>
     </div>
   </section>
 
-  <!-- ============ PREMIUM ============ -->
   <section class="standard premium" id="premium">
     <div class="container">
       <div class="section-header">
         <div class="eyebrow">Pricing</div>
         <h2>Free for the basics. <em>Premium</em> for the rest.</h2>
-        <p>Every student gets full access to 30 universities, 100+ courses, scholarships, and the FAQ knowledge base. Upgrade for ARIA AI and advanced planning tools.</p>
+        <p>Every student gets full access to 30 universities, 100+ courses, scholarships and the FAQ knowledge base. Upgrade for ARIA AI and advanced planning tools.</p>
       </div>
-
       <div class="pricing-grid">
         <div class="price-card">
           <div class="eyebrow">Free</div>
-          <div class="price-amount">
-            <span class="currency">A$</span>0
-            <span class="period">forever</span>
-          </div>
+          <div class="price-amount"><span class="currency">A$</span>0<span class="period">forever</span></div>
           <p class="price-tagline">For every international student researching their options.</p>
           <ul class="price-features">
-            <li>30 Australian universities</li>
-            <li>100+ courses across 15 fields</li>
-            <li>Scholarship database</li>
-            <li>City cost-of-living guides</li>
-            <li>52 FAQ knowledge base</li>
-            <li>Visa Subclass 500 guide</li>
+            <li>30 Australian universities</li><li>100+ courses across 15 fields</li><li>Scholarship database</li><li>City cost-of-living guides</li><li>52 FAQ knowledge base</li><li>Visa Subclass 500 guide</li>
           </ul>
         </div>
-
         <div class="price-card featured">
           <div class="eyebrow">Premium · Monthly</div>
-          <div class="price-amount">
-            <span class="currency">A$</span>9.99
-            <span class="period">/month</span>
-          </div>
+          <div class="price-amount"><span class="currency">A$</span>9.99<span class="period">/month</span></div>
           <p class="price-tagline">Cancel anytime. Unlocks the full ARIA AI experience.</p>
           <ul class="price-features">
-            <li>Everything in Free</li>
-            <li>Unlimited ARIA AI chat</li>
-            <li>University comparison tool</li>
-            <li>Course eligibility checker</li>
-            <li>AI-personalised scholarships</li>
-            <li>Pre-departure checklist sync</li>
+            <li>Everything in Free</li><li>Unlimited ARIA AI chat</li><li>University comparison tool</li><li>Course eligibility checker</li><li>AI-personalised scholarships</li><li>Pre-departure checklist sync</li>
           </ul>
         </div>
-
         <div class="price-card">
           <div class="eyebrow">Premium · Yearly</div>
-          <div class="price-amount">
-            <span class="currency">A$</span>59.99
-            <span class="period">/year</span>
-          </div>
+          <div class="price-amount"><span class="currency">A$</span>59.99<span class="period">/year</span></div>
           <p class="price-tagline">Save 50% — works out to roughly A$5/month.</p>
           <ul class="price-features">
-            <li>All Premium features</li>
-            <li>Two months free vs monthly</li>
-            <li>Priority feature updates</li>
-            <li>Resume builder with ARIA</li>
-            <li>Family plan also available</li>
-            <li>Best for full application cycle</li>
+            <li>All Premium features</li><li>Two months free vs monthly</li><li>Priority feature updates</li><li>Resume builder with ARIA</li><li>Family plan also available</li><li>Best for the full application cycle</li>
           </ul>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ============ FAQ ============ -->
   <section class="standard" id="faq">
     <div class="container">
       <div class="section-header">
         <div class="eyebrow">Common questions</div>
         <h2>You probably want to know…</h2>
       </div>
-
       <div class="faq-list">
-        <details class="faq-item">
-          <summary>How much does it cost to study in Australia?</summary>
-          <div class="faq-answer">
-            Tuition typically ranges from AUD $30,000 to AUD $52,000 per year for international students, depending on the university and course. Add roughly AUD $24,505 per year for living costs (the official visa minimum), and AUD $500–700 for mandatory OSHC health cover. Sydney and Melbourne sit at the higher end; Adelaide, Brisbane, and Perth are notably cheaper.
-          </div>
-        </details>
-
-        <details class="faq-item">
-          <summary>How long does the student visa take?</summary>
-          <div class="faq-answer">
-            Subclass 500 processing usually takes 4–12 weeks. Apply at least three months before your course start date. Submit a complete application with proper financial documents, a strong Genuine Temporary Entrant (GTE) statement, and health checks done early to avoid delays. We always recommend working with a MARA-registered Migration Agent.
-          </div>
-        </details>
-
-        <details class="faq-item">
-          <summary>What IELTS score do I need?</summary>
-          <div class="faq-answer">
-            Undergraduate programs typically require IELTS 6.0–6.5 overall. Masters programs need 6.5–7.0. Medicine, Law, and Teaching usually require 7.0+ with strong individual band scores. TOEFL iBT and PTE Academic are accepted equivalents. AusUni Guide's eligibility checker shows the exact requirement for each course.
-          </div>
-        </details>
-
-        <details class="faq-item">
-          <summary>Can I work while studying?</summary>
-          <div class="faq-answer">
-            Yes. The Subclass 500 visa allows 48 hours of work per fortnight during semester, and unlimited hours during official course breaks. You'll need a Tax File Number (TFN) — apply free at ato.gov.au within four weeks of arriving. Minimum wage in Australia is currently AUD $24.10/hour.
-          </div>
-        </details>
-
-        <details class="faq-item">
-          <summary>Is ARIA available for free users?</summary>
-          <div class="faq-answer">
-            Free users get the full ARIA Knowledge Base — 52 pre-written expert answers covering the most common student questions. The Premium AI Chat unlocks unlimited personalised conversations with Claude AI, trained specifically on the Australian student journey.
-          </div>
-        </details>
-
-        <details class="faq-item">
-          <summary>Do I keep my data if I cancel Premium?</summary>
-          <div class="faq-answer">
-            Yes. Your application progress, checklist completions, and university shortlist all stay with your account. You'll lose access to ARIA AI chat, comparison tools, and the eligibility checker, but everything else — including the FAQ knowledge base — remains free forever.
-          </div>
-        </details>
-
-        <details class="faq-item">
-          <summary>Is this an official Australian Government app?</summary>
-          <div class="faq-answer">
-            No. AusUni Guide is an independent app built to help international students navigate Australian universities. We are not affiliated with the Australian Government, the Department of Home Affairs, or any specific university. For official visa matters, always consult immi.homeaffairs.gov.au or a MARA-registered Migration Agent.
-          </div>
-        </details>
+        <details class="faq-item"><summary>How much does it cost to study in Australia?</summary><div class="faq-answer">Tuition typically ranges from AUD $30,000 to AUD $50,000 per year for international students, depending on the university and course. Add roughly AUD $24,505 per year for living costs (the official visa minimum) and AUD $500–700 for mandatory OSHC health cover. Sydney and Melbourne sit at the higher end; Adelaide, Brisbane and Perth are notably cheaper.</div></details>
+        <details class="faq-item"><summary>How long does the student visa take?</summary><div class="faq-answer">Subclass 500 processing usually takes 4–12 weeks. Apply at least three months before your course start date. Submit a complete application with proper financial documents, a strong Genuine Temporary Entrant statement, and health checks done early to avoid delays. We always recommend working with a MARA-registered Migration Agent.</div></details>
+        <details class="faq-item"><summary>What IELTS score do I need?</summary><div class="faq-answer">Undergraduate programs typically require IELTS 6.0–6.5 overall. Masters programs need 6.5–7.0. Medicine, Law and Teaching usually require 7.0+ with strong individual band scores. TOEFL iBT and PTE Academic are accepted equivalents. The in-app eligibility checker shows the exact requirement for each course.</div></details>
+        <details class="faq-item"><summary>Can I work while studying?</summary><div class="faq-answer">Yes. The Subclass 500 visa allows 48 hours of work per fortnight during semester, and unlimited hours during official course breaks. You'll need a Tax File Number — apply free at ato.gov.au within four weeks of arriving. Minimum wage in Australia is currently AUD $24.10/hour.</div></details>
+        <details class="faq-item"><summary>Is ARIA available for free users?</summary><div class="faq-answer">Free users get the full ARIA Knowledge Base — 52 pre-written expert answers covering the most common student questions. The Premium AI Chat unlocks unlimited personalised conversations trained specifically on the Australian student journey.</div></details>
+        <details class="faq-item"><summary>Is this an official Australian Government app?</summary><div class="faq-answer">No. UniPath Australia is an independent app built to help international students navigate Australian universities. We are not affiliated with the Australian Government, the Department of Home Affairs, or any specific university. For official visa matters, always consult immi.homeaffairs.gov.au or a MARA-registered Migration Agent.</div></details>
       </div>
     </div>
   </section>
 
-  <!-- ============ STORY ============ -->
   <section class="standard story">
     <div class="container">
       <h2>Why this app <em>exists.</em></h2>
-      <p>
-        I built AusUni Guide because the international student experience is too important to navigate alone — yet most students piece together advice from forums, expensive consultants, and friends-of-friends who studied somewhere five years ago.
-      </p>
-      <p>
-        This app is what I wish existed when I was making the same decisions: 30 vetted universities, the actual visa process, real cost breakdowns, and an AI advisor that doesn't sleep, doesn't sell, and doesn't have an agenda.
-      </p>
-      <p>
-        It's free for the essentials because the essentials should be free. Premium funds the API costs and the development of new features.
-      </p>
-      <div class="story-signature">— Mustansir, founder</div>
+      <p>UniPath Australia exists because the international student experience is too important to navigate alone — yet most students piece together advice from forums, expensive consultants, and friends-of-friends who studied somewhere five years ago.</p>
+      <p>This app is what we wish existed when making the same decisions: 30 vetted universities, the actual visa process, real cost breakdowns, and an AI advisor that doesn't sleep, doesn't sell, and doesn't have an agenda.</p>
+      <p>It's free for the essentials because the essentials should be free. Premium funds the API costs and the development of new features.</p>
+      <div class="story-signature">— The UniPath Australia team</div>
     </div>
   </section>
 
-  <!-- ============ FINAL CTA ============ -->
   <section class="final-cta" id="download">
     <div class="container">
       <h2>Make your move to <em>Australia</em> with a guide in your pocket.</h2>
       <p>Free to download. Free to use. Premium when you're ready for more.</p>
       <a href="https://play.google.com/store/apps/details?id=com.mustansir.yaqub.ausuniguide" class="play-badge" target="_blank" rel="noopener">
-        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <path d="M3.609 1.814L13.792 12 3.609 22.186a.996.996 0 01-.61-.92V2.734a1 1 0 01.61-.92zM14.5 12.706l2.456 2.456-9.733 5.605L14.5 12.706zM4.857 1.04l9.643 5.55L4.222 16.86 4.857 1.04zM17.794 8.27l3.42 1.974c.78.45.78 1.572 0 2.022l-3.42 1.974L15.21 12l2.584-3.73z"/>
-        </svg>
-        <div class="badge-text">
-          <div class="badge-small">Get it on</div>
-          <div class="badge-big">Google Play</div>
-        </div>
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3.609 1.814L13.792 12 3.609 22.186a.996.996 0 01-.61-.92V2.734a1 1 0 01.61-.92zM14.5 12.706l2.456 2.456-9.733 5.605L14.5 12.706zM4.857 1.04l9.643 5.55L4.222 16.86 4.857 1.04zM17.794 8.27l3.42 1.974c.78.45.78 1.572 0 2.022l-3.42 1.974L15.21 12l2.584-3.73z"/></svg>
+        <div class="badge-text"><div class="badge-small">Get it on</div><div class="badge-big">Google Play</div></div>
       </a>
     </div>
   </section>
 
-  <!-- ============ FOOTER ============ -->
   <footer>
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <a href="/" class="logo">
-            <span class="logo-mark">A</span>
-            <span>AusUni Guide</span>
+          <a href="index.html" class="logo">
+            <span class="logo-mark"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 3L1 8l11 5 9-4.09V15h2V8L12 3zM5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z" fill="#E5A442"/></svg></span>
+            <span>UniPath Australia</span>
           </a>
           <p>An independent app helping international students navigate Australian university applications, visas, and life on the ground.</p>
         </div>
-
-        <div class="footer-col">
-          <h4>Product</h4>
-          <ul>
-            <li><a href="#features">Features</a></li>
-            <li><a href="#premium">Premium</a></li>
-            <li><a href="#faq">FAQ</a></li>
-            <li><a href="#download">Download</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-col">
-          <h4>Legal</h4>
-          <ul>
-            <li><a href="privacy.html">Privacy Policy</a></li>
-            <li><a href="terms.html">Terms of Service</a></li>
-            <li><a href="support.html">Support</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-col">
-          <h4>Contact</h4>
-          <ul>
-            <li><a href="mailto:supportmarketiq@gmail.com">supportmarketiq@gmail.com</a></li>
-          </ul>
-        </div>
+        <div class="footer-col"><h4>Product</h4><ul><li><a href="#features">Features</a></li><li><a href="#premium">Premium</a></li><li><a href="#faq">FAQ</a></li><li><a href="#download">Download</a></li></ul></div>
+        <div class="footer-col"><h4>Legal</h4><ul><li><a href="privacy.html">Privacy Policy</a></li><li><a href="terms.html">Terms of Service</a></li><li><a href="support.html">Support</a></li></ul></div>
+        <div class="footer-col"><h4>Contact</h4><ul><li><a href="mailto:supportmarketiq@gmail.com">supportmarketiq@gmail.com</a></li></ul></div>
       </div>
-
       <div class="footer-bottom">
-        <div>© 2026 AusUni Guide. All rights reserved.</div>
-        <div>Built independently in Melbourne, Australia.</div>
+        <div>© 2026 UniPath Australia. All rights reserved.</div>
+        <div>Developed by MustiIQ · Melbourne, Australia.</div>
       </div>
-
       <p class="footer-disclaimer">
-        AusUni Guide is an independent application and is not affiliated with the Australian Government, the Department of Home Affairs, or any specific university. Information about visa processes, university programs, and scholarships is provided for general guidance only. For official visa applications, always consult a MARA-registered Migration Agent or the Department of Home Affairs at immi.homeaffairs.gov.au.
+        UniPath Australia is an independent application and is not affiliated with the Australian Government, the Department of Home Affairs, or any specific university. Information about visa processes, university programs and scholarships is provided for general guidance only. For official visa applications, always consult a MARA-registered Migration Agent or the Department of Home Affairs at immi.homeaffairs.gov.au.
       </p>
     </div>
   </footer>
