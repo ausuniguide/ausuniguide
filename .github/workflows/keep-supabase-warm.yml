@@ -1,0 +1,33 @@
+name: Keep Supabase Warm
+ 
+# Pings the UniPath Australia Supabase project once a day so it never hits
+# the free-tier 7-day inactivity pause. Costs nothing, calls no edge function,
+# and makes no Claude API calls — it just touches the REST endpoint.
+ 
+on:
+  schedule:
+    # 02:15 UTC daily. GitHub cron can run late under load, so a daily job
+    # keeps you comfortably inside the 7-day window even if some runs slip.
+    - cron: "15 2 * * *"
+  workflow_dispatch:   # lets you trigger it by hand from the Actions tab
+ 
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ping Supabase REST endpoint
+        run: |
+          echo "Pinging Supabase to reset the inactivity timer..."
+          HTTP_CODE=$(curl -s -o /dev/null -w "%{http_code}" \
+            -H "apikey: ${{ secrets.SUPABASE_ANON_KEY }}" \
+            -H "Authorization: Bearer ${{ secrets.SUPABASE_ANON_KEY }}" \
+            "${{ secrets.SUPABASE_URL }}/rest/v1/")
+          echo "Response code: $HTTP_CODE"
+          # 200 or 404 both mean the database answered (timer reset). Only a
+          # network-level failure or 5xx is a real problem.
+          if [ "$HTTP_CODE" -ge 500 ] || [ "$HTTP_CODE" -eq 000 ]; then
+            echo "Ping failed — Supabase did not respond healthily."
+            exit 1
+          fi
+          echo "Supabase is awake. Timer reset."
+ 
