@@ -1,0 +1,25 @@
+/* UniPath Australia theme — navy / gold / eucalyptus, warm paper */
+:root{
+  --font-head:'Fraunces',Georgia,serif; --font-body:'Inter',system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+  --bg:#FBF8F3; --bg-alt:#F3ECDF; --surface:#FFFFFF; --ink:#1A2332; --ink-strong:#0A2540; --muted:#56657A;
+  --line:#E7DFD2; --line-strong:#D6CAB6; --brand:#0A2540; --brand-tint:#EEF2F7; --on-brand:#FFFFFF;
+  --accent-ink:#8A5A12; --cta:#E5A442; --cta-hover:#D8952F; --on-cta:#1A1405; --link:#0A5C8A; --focus:#E5A442;
+  --good:#2F7A5F; --good-tint:#E3F1EA; --warn:#A34A12; --warn-tint:#FBEBDD;
+  --radius:16px; --shadow-sm:0 1px 2px rgba(10,37,64,.06); --shadow-lg:0 24px 48px rgba(10,37,64,.12);
+}
+.hero h1 em{font-style:italic;color:#B7791F;font-weight:600}
+.brand-mark{background:linear-gradient(135deg,#0A2540,#14375A);color:#E5A442}
+.band{background:#0A2540;color:#E8EEF5}
+.band h2,.band h3{color:#fff}
+.band .muted{color:#B9C6D6}
+@media(max-width:719px){
+  .brand .muted{display:none}
+  .hero{padding:22px 0 20px}
+  .hero .lede{font-size:1rem}
+  .hero-cta,.hero .trust{display:none}
+  .hero-grid{gap:18px}
+  .wizard{min-height:0}
+}
+.trust-under{display:flex;flex-wrap:wrap;gap:6px 14px;margin-top:12px;font-size:.82rem;color:var(--muted);list-style:none;padding:0}
+.trust-under li::before{content:"✓ ";color:var(--good);font-weight:700}
+@media(min-width:720px){.trust-under{display:none}}
